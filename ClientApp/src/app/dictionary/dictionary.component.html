@@ -1,0 +1,24 @@
+<h1>esignatur dictionary</h1>
+<p></p>
+<input type='text' [(ngModel)]='filter' placeholder="søg" />
+<p *ngIf="!translations"><em>Loading...</em></p>
+<table class='table' *ngIf="translations">
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Danish</th>
+            <th>English</th>
+            <th>Sweedish</th>
+            <th>Norwegian</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody translation-add [translations]="translations"></tbody>
+    <tbody>
+        <tr *ngFor="let translation of filteredTranslations()" translation-row [translation]="translation"
+            [translations]="translations">
+        </tr>
+    </tbody>
+</table>
+<input type='file' (change)="uploadJson($event)">
+<button (click)="uploadDocument()">send</button>
