@@ -40,8 +40,7 @@ export class DictionaryComponent {
   uploadDocument() {
     const fileReader = new FileReader();
     fileReader.onload = e => {
-      // console.log(fileReader.result);
-      const fileResult = JSON.parse(fileReader.result);
+      const fileResult = JSON.parse(fileReader.result as string);
       this.http
         .post<any>(
           this.baseUrl + 'api/translation/updatefromOldjson',

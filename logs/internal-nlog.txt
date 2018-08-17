@@ -229,3 +229,1405 @@
 2018-08-12 13:40:21.2640 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
 2018-08-12 13:40:21.2722 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
 2018-08-12 13:40:21.2875 Info Found 30 configuration items
+2018-08-12 14:00:36.6864 Info Message Template Auto Format enabled
+2018-08-12 14:00:36.6944 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:00:36.7665 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:00:36.7665 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:00:36.7738 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:00:36.7876 Info Found 30 configuration items
+2018-08-12 14:00:39.4294 Info Message Template Auto Format enabled
+2018-08-12 14:00:39.4294 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:00:39.4304 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:00:39.4304 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:00:39.4304 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:00:39.4304 Info Found 30 configuration items
+2018-08-12 14:00:39.4543 Error Failed Watching path '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1' with file '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config' for changes. Exception: System.IO.IOException: The configured user limit (128) on the number of inotify instances has been reached.
+   at System.IO.FileSystemWatcher.StartRaisingEvents()
+   at System.IO.FileSystemWatcher.StartRaisingEventsIfNotDisposed()
+   at System.IO.FileSystemWatcher.set_EnableRaisingEvents(Boolean value)
+   at NLog.Internal.MultiFileWatcher.Watch(String fileName)
+2018-08-12 14:00:39.4567 Info Configuration initialized.
+2018-08-12 14:00:39.4818 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:00:39.4831 Info Message Template Auto Format enabled
+2018-08-12 14:00:39.4831 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:00:39.4831 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:00:39.4831 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:00:39.4831 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:00:39.4831 Info Found 30 configuration items
+2018-08-12 14:00:39.4876 Error Failed Watching path '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1' with file '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config' for changes. Exception: System.IO.IOException: The configured user limit (128) on the number of inotify instances has been reached.
+   at System.IO.FileSystemWatcher.StartRaisingEvents()
+   at System.IO.FileSystemWatcher.StartRaisingEventsIfNotDisposed()
+   at System.IO.FileSystemWatcher.set_EnableRaisingEvents(Boolean value)
+   at NLog.Internal.MultiFileWatcher.Watch(String fileName)
+2018-08-12 14:00:39.4876 Info Configuration initialized.
+2018-08-12 14:00:39.4876 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:01:41.6564 Info Message Template Auto Format enabled
+2018-08-12 14:01:41.6644 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:01:41.7379 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:01:41.7390 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:01:41.7455 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:01:41.7613 Info Found 30 configuration items
+2018-08-12 14:01:44.3060 Info Message Template Auto Format enabled
+2018-08-12 14:01:44.3060 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:01:44.3070 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:01:44.3070 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:01:44.3070 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:01:44.3070 Info Found 30 configuration items
+2018-08-12 14:01:44.3319 Error Failed Watching path '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1' with file '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config' for changes. Exception: System.IO.IOException: The configured user limit (128) on the number of inotify instances has been reached.
+   at System.IO.FileSystemWatcher.StartRaisingEvents()
+   at System.IO.FileSystemWatcher.StartRaisingEventsIfNotDisposed()
+   at System.IO.FileSystemWatcher.set_EnableRaisingEvents(Boolean value)
+   at NLog.Internal.MultiFileWatcher.Watch(String fileName)
+2018-08-12 14:01:44.3319 Info Configuration initialized.
+2018-08-12 14:01:44.3594 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:01:44.3594 Info Message Template Auto Format enabled
+2018-08-12 14:01:44.3594 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:01:44.3594 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:01:44.3594 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:01:44.3594 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:01:44.3594 Info Found 30 configuration items
+2018-08-12 14:01:44.3637 Error Failed Watching path '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1' with file '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config' for changes. Exception: System.IO.IOException: The configured user limit (128) on the number of inotify instances has been reached.
+   at System.IO.FileSystemWatcher.StartRaisingEvents()
+   at System.IO.FileSystemWatcher.StartRaisingEventsIfNotDisposed()
+   at System.IO.FileSystemWatcher.set_EnableRaisingEvents(Boolean value)
+   at NLog.Internal.MultiFileWatcher.Watch(String fileName)
+2018-08-12 14:01:44.3637 Info Configuration initialized.
+2018-08-12 14:01:44.3637 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:03:25.0792 Info Message Template Auto Format enabled
+2018-08-12 14:03:25.0884 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:03:25.1649 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:03:25.1668 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:03:25.1740 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:03:25.1902 Info Found 30 configuration items
+2018-08-12 14:03:25.2756 Error Failed Watching path '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1' with file '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config' for changes. Exception: System.IO.IOException: The configured user limit (128) on the number of inotify instances has been reached.
+   at System.IO.FileSystemWatcher.StartRaisingEvents()
+   at System.IO.FileSystemWatcher.StartRaisingEventsIfNotDisposed()
+   at System.IO.FileSystemWatcher.set_EnableRaisingEvents(Boolean value)
+   at NLog.Internal.MultiFileWatcher.Watch(String fileName)
+2018-08-12 14:24:45.2166 Info Message Template Auto Format enabled
+2018-08-12 14:24:45.2251 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:24:45.2932 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:24:45.2932 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:24:45.3010 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:24:45.3161 Info Found 30 configuration items
+2018-08-12 14:24:48.9459 Info Message Template Auto Format enabled
+2018-08-12 14:24:48.9459 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:24:48.9459 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:24:48.9475 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:24:48.9475 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:24:48.9475 Info Found 30 configuration items
+2018-08-12 14:24:48.9530 Info Configuration initialized.
+2018-08-12 14:24:48.9938 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:24:48.9938 Info Message Template Auto Format enabled
+2018-08-12 14:24:48.9938 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:24:48.9961 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:24:48.9961 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:24:48.9961 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:24:48.9961 Info Found 30 configuration items
+2018-08-12 14:24:48.9961 Info Configuration initialized.
+2018-08-12 14:24:49.0030 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:25:58.5673 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-12 14:25:58.5673 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-12 14:25:58.5673 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-12 14:25:58.5673 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-12 14:25:58.5673 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-12 14:25:58.5673 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-12 14:25:58.5673 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-12 14:25:58.5673 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-12 14:25:58.5673 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-12 14:25:59.5735 Info Reloading configuration...
+2018-08-12 14:25:59.5735 Info Reloading configuration...
+2018-08-12 14:25:59.5735 Info Reloading configuration...
+2018-08-12 14:25:59.6240 Info Message Template Auto Format enabled
+2018-08-12 14:25:59.6240 Info Message Template Auto Format enabled
+2018-08-12 14:25:59.6240 Info Message Template Auto Format enabled
+2018-08-12 14:25:59.6240 Info Found 30 configuration items
+2018-08-12 14:25:59.6240 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:25:59.6296 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:25:59.6296 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:25:59.6296 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:25:59.6315 Info Closing old configuration.
+2018-08-12 14:25:59.6703 Info Found 30 configuration items
+2018-08-12 14:25:59.6762 Info Found 30 configuration items
+2018-08-12 14:25:59.6762 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:25:59.6762 Info Found 30 configuration items
+2018-08-12 14:25:59.6762 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:25:59.6762 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:25:59.6762 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:25:59.6762 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:25:59.6762 Info Closing old configuration.
+2018-08-12 14:25:59.6762 Info Found 30 configuration items
+2018-08-12 14:25:59.6762 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-12 14:25:59.6762 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-12 14:25:59.6762 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:25:59.6762 Info Closing old configuration.
+2018-08-12 14:25:59.6762 Info Found 30 configuration items
+2018-08-12 14:27:37.6905 Info Message Template Auto Format enabled
+2018-08-12 14:27:37.6984 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:27:37.7680 Info Adding target File Target[default]
+2018-08-12 14:27:37.7680 Info Adding target File Target[microsoft]
+2018-08-12 14:27:37.7758 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:27:37.7896 Info Found 28 configuration items
+2018-08-12 14:27:39.8972 Info Message Template Auto Format enabled
+2018-08-12 14:27:39.8972 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:27:39.8972 Info Adding target File Target[default]
+2018-08-12 14:27:39.8972 Info Adding target File Target[microsoft]
+2018-08-12 14:27:39.8993 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:27:39.8993 Info Found 28 configuration items
+2018-08-12 14:27:39.9055 Info Configuration initialized.
+2018-08-12 14:27:40.0430 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:27:40.0441 Info Message Template Auto Format enabled
+2018-08-12 14:27:40.0441 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:27:40.0441 Info Adding target File Target[default]
+2018-08-12 14:27:40.0441 Info Adding target File Target[microsoft]
+2018-08-12 14:27:40.0441 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:27:40.1048 Info Found 28 configuration items
+2018-08-12 14:27:40.1048 Info Configuration initialized.
+2018-08-12 14:27:40.1095 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:27:40.1276 Info Message Template Auto Format enabled
+2018-08-12 14:27:40.1276 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:27:40.1276 Info Adding target File Target[default]
+2018-08-12 14:27:40.1276 Info Adding target File Target[microsoft]
+2018-08-12 14:27:40.1276 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:27:40.1276 Info Found 28 configuration items
+2018-08-12 14:27:40.1276 Info Configuration initialized.
+2018-08-12 14:27:40.1332 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:27:40.1332 Info Message Template Auto Format enabled
+2018-08-12 14:27:40.1332 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:27:40.1332 Info Adding target File Target[default]
+2018-08-12 14:27:40.1353 Info Adding target File Target[microsoft]
+2018-08-12 14:27:40.1353 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:27:40.1353 Info Found 28 configuration items
+2018-08-12 14:27:40.1455 Info Configuration initialized.
+2018-08-12 14:27:40.1487 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-12 14:29:40.2609 Info Message Template Auto Format enabled
+2018-08-12 14:29:40.2689 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-12 14:29:40.3377 Info Adding target File Target[default]
+2018-08-12 14:29:40.3377 Info Adding target File Target[microsoft]
+2018-08-12 14:29:40.3451 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-12 14:29:40.3587 Info Found 28 configuration items
+2018-08-13 13:21:46.7781 Info Message Template Auto Format enabled
+2018-08-13 13:21:46.7864 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 13:21:46.8520 Info Adding target File Target[default]
+2018-08-13 13:21:46.8535 Info Adding target File Target[microsoft]
+2018-08-13 13:21:46.8599 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 13:21:46.8736 Info Found 28 configuration items
+2018-08-13 14:33:36.4315 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 14:33:36.4315 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 14:33:36.4315 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 14:33:37.4332 Info Reloading configuration...
+2018-08-13 14:33:37.4516 Info Message Template Auto Format enabled
+2018-08-13 14:33:37.4533 Info Found 28 configuration items
+2018-08-13 14:33:37.4533 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 14:33:37.4564 Info Adding target File Target[default]
+2018-08-13 14:33:37.4564 Info Adding target File Target[microsoft]
+2018-08-13 14:33:37.4564 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 14:33:37.4564 Info Closing old configuration.
+2018-08-13 14:33:37.4789 Info Found 28 configuration items
+2018-08-13 14:39:35.1562 Info Message Template Auto Format enabled
+2018-08-13 14:39:35.1642 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 14:39:35.2304 Info Adding target File Target[default]
+2018-08-13 14:39:35.2304 Info Adding target File Target[microsoft]
+2018-08-13 14:39:35.2377 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 14:39:35.2526 Info Found 28 configuration items
+2018-08-13 14:42:21.5968 Info Message Template Auto Format enabled
+2018-08-13 14:42:21.6051 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 14:42:21.6766 Info Adding target File Target[default]
+2018-08-13 14:42:21.6766 Info Adding target File Target[microsoft]
+2018-08-13 14:42:21.6852 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 14:42:21.7004 Info Found 28 configuration items
+2018-08-13 21:06:06.5625 Info Message Template Auto Format enabled
+2018-08-13 21:06:06.5947 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:06:06.8519 Info Adding target File Target[default]
+2018-08-13 21:06:06.8567 Info Adding target File Target[microsoft]
+2018-08-13 21:06:06.8794 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:06:06.9372 Info Found 28 configuration items
+2018-08-13 21:06:14.8453 Info Message Template Auto Format enabled
+2018-08-13 21:06:14.8453 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:06:14.8453 Info Adding target File Target[default]
+2018-08-13 21:06:14.8453 Info Adding target File Target[microsoft]
+2018-08-13 21:06:14.8453 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:06:14.8476 Info Found 28 configuration items
+2018-08-13 21:06:14.8518 Info Configuration initialized.
+2018-08-13 21:06:14.8953 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:06:18.0761 Info Message Template Auto Format enabled
+2018-08-13 21:06:18.0761 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:06:18.1497 Info Adding target File Target[default]
+2018-08-13 21:06:18.1497 Info Adding target File Target[microsoft]
+2018-08-13 21:06:18.1497 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:06:18.1604 Info Found 28 configuration items
+2018-08-13 21:06:18.1634 Info Configuration initialized.
+2018-08-13 21:06:18.1634 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:08:22.0789 Info Message Template Auto Format enabled
+2018-08-13 21:08:22.1089 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:08:22.2238 Info Adding target File Target[default]
+2018-08-13 21:08:22.2238 Info Adding target File Target[microsoft]
+2018-08-13 21:08:22.2331 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:08:22.2497 Info Found 26 configuration items
+2018-08-13 21:08:26.2923 Info Message Template Auto Format enabled
+2018-08-13 21:08:26.2923 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:08:26.2923 Info Adding target File Target[default]
+2018-08-13 21:08:26.2923 Info Adding target File Target[microsoft]
+2018-08-13 21:08:26.2923 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:08:26.2923 Info Found 26 configuration items
+2018-08-13 21:08:26.3038 Info Configuration initialized.
+2018-08-13 21:08:26.3610 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:08:26.3610 Info Message Template Auto Format enabled
+2018-08-13 21:08:26.3610 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:08:26.3610 Info Adding target File Target[default]
+2018-08-13 21:08:26.3610 Info Adding target File Target[microsoft]
+2018-08-13 21:08:26.3610 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:08:26.3634 Info Found 26 configuration items
+2018-08-13 21:08:26.3634 Info Configuration initialized.
+2018-08-13 21:08:26.3685 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:15:55.3422 Info Message Template Auto Format enabled
+2018-08-13 21:15:55.3705 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:15:55.6463 Info Adding target File Target[default]
+2018-08-13 21:15:55.6501 Info Adding target File Target[microsoft]
+2018-08-13 21:15:55.6710 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:15:55.7143 Info Found 28 configuration items
+2018-08-13 21:15:59.4977 Info Message Template Auto Format enabled
+2018-08-13 21:15:59.4977 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:15:59.4977 Info Adding target File Target[default]
+2018-08-13 21:15:59.4977 Info Adding target File Target[microsoft]
+2018-08-13 21:15:59.4977 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:15:59.4998 Info Found 28 configuration items
+2018-08-13 21:15:59.5043 Info Configuration initialized.
+2018-08-13 21:15:59.5430 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:15:59.5440 Info Message Template Auto Format enabled
+2018-08-13 21:15:59.5440 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:15:59.5440 Info Adding target File Target[default]
+2018-08-13 21:15:59.5440 Info Adding target File Target[microsoft]
+2018-08-13 21:15:59.5440 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:15:59.5440 Info Found 28 configuration items
+2018-08-13 21:15:59.5440 Info Configuration initialized.
+2018-08-13 21:15:59.5504 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:20:29.9329 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:29.9329 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:29.9329 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:29.9329 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:29.9329 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:29.9329 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:30.9395 Info Reloading configuration...
+2018-08-13 21:20:30.9395 Info Reloading configuration...
+2018-08-13 21:20:30.9395 Info Reloading configuration...
+2018-08-13 21:20:30.9827 Info Message Template Auto Format enabled
+2018-08-13 21:20:30.9827 Info Message Template Auto Format enabled
+2018-08-13 21:20:30.9827 Info Message Template Auto Format enabled
+2018-08-13 21:20:30.9848 Info Found 28 configuration items
+2018-08-13 21:20:30.9848 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:20:30.9887 Info Adding target File Target[default]
+2018-08-13 21:20:30.9887 Info Adding target File Target[microsoft]
+2018-08-13 21:20:30.9887 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:20:30.9914 Info Closing old configuration.
+2018-08-13 21:20:31.0473 Info Found 28 configuration items
+2018-08-13 21:20:31.0666 Info Found 28 configuration items
+2018-08-13 21:20:31.0680 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:20:31.0680 Info Found 28 configuration items
+2018-08-13 21:20:31.0680 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:20:31.0712 Info Adding target File Target[default]
+2018-08-13 21:20:31.0712 Info Adding target File Target[microsoft]
+2018-08-13 21:20:31.0712 Info Adding target File Target[default]
+2018-08-13 21:20:31.0712 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:20:31.0712 Info Closing old configuration.
+2018-08-13 21:20:31.0712 Info Adding target File Target[microsoft]
+2018-08-13 21:20:31.0712 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:20:31.0712 Info Closing old configuration.
+2018-08-13 21:20:31.0755 Info Found 28 configuration items
+2018-08-13 21:20:31.0755 Info Found 28 configuration items
+2018-08-13 21:20:42.5579 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:42.5579 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:42.5579 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:42.5579 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:42.5579 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:42.5579 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:20:43.5560 Info Reloading configuration...
+2018-08-13 21:20:43.5560 Info Reloading configuration...
+2018-08-13 21:20:43.5785 Info Reloading configuration...
+2018-08-13 21:20:43.5785 Info Message Template Auto Format enabled
+2018-08-13 21:20:43.5785 Info Message Template Auto Format enabled
+2018-08-13 21:20:43.6011 Info Message Template Auto Format enabled
+2018-08-13 21:20:43.6011 Info Found 28 configuration items
+2018-08-13 21:20:43.6011 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:20:43.6049 Info Adding target File Target[default]
+2018-08-13 21:20:43.6049 Info Adding target File Target[microsoft]
+2018-08-13 21:20:43.6049 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:20:43.6049 Info Closing old configuration.
+2018-08-13 21:20:43.6084 Info Found 28 configuration items
+2018-08-13 21:20:43.6269 Info Found 28 configuration items
+2018-08-13 21:20:43.6283 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:20:43.6283 Info Found 28 configuration items
+2018-08-13 21:20:43.6283 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:20:43.6313 Info Adding target File Target[default]
+2018-08-13 21:20:43.6313 Info Adding target File Target[microsoft]
+2018-08-13 21:20:43.6313 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:20:43.6313 Info Closing old configuration.
+2018-08-13 21:20:43.6313 Info Adding target File Target[default]
+2018-08-13 21:20:43.6313 Info Found 28 configuration items
+2018-08-13 21:20:43.6313 Info Adding target File Target[microsoft]
+2018-08-13 21:20:43.6313 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:20:43.6313 Info Closing old configuration.
+2018-08-13 21:20:43.6364 Info Found 28 configuration items
+2018-08-13 21:21:18.7113 Info Message Template Auto Format enabled
+2018-08-13 21:21:18.7543 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:21:18.9481 Info Adding target File Target[default]
+2018-08-13 21:21:18.9481 Info Adding target File Target[microsoft]
+2018-08-13 21:21:18.9596 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:21:18.9816 Info Found 28 configuration items
+2018-08-13 21:21:22.8055 Info Message Template Auto Format enabled
+2018-08-13 21:21:22.8055 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:21:22.8055 Info Adding target File Target[default]
+2018-08-13 21:21:22.8055 Info Adding target File Target[microsoft]
+2018-08-13 21:21:22.8055 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:21:22.8074 Info Found 28 configuration items
+2018-08-13 21:21:22.8128 Info Configuration initialized.
+2018-08-13 21:21:22.8706 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:21:22.8719 Info Message Template Auto Format enabled
+2018-08-13 21:21:22.8719 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:21:22.8719 Info Adding target File Target[default]
+2018-08-13 21:21:22.8719 Info Adding target File Target[microsoft]
+2018-08-13 21:21:22.8719 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:21:22.8752 Info Found 28 configuration items
+2018-08-13 21:21:22.8752 Info Configuration initialized.
+2018-08-13 21:21:22.8835 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:21:48.8458 Info Message Template Auto Format enabled
+2018-08-13 21:21:48.8592 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:21:48.9643 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:21:48.9643 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:21:48.9725 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:21:48.9921 Info Found 30 configuration items
+2018-08-13 21:44:07.3504 Info Message Template Auto Format enabled
+2018-08-13 21:44:07.3752 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:44:07.5492 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:44:07.5492 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:44:07.5565 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:44:07.5717 Info Found 30 configuration items
+2018-08-13 21:46:48.8427 Info Message Template Auto Format enabled
+2018-08-13 21:46:48.8562 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:46:49.0374 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:46:49.0390 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:46:49.0510 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:46:49.0800 Info Found 30 configuration items
+2018-08-13 21:46:54.4427 Info Message Template Auto Format enabled
+2018-08-13 21:46:54.4436 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:46:54.4436 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:46:54.4436 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:46:54.4436 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:46:54.4476 Info Found 30 configuration items
+2018-08-13 21:46:54.4528 Info Configuration initialized.
+2018-08-13 21:46:54.5122 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:46:54.5122 Info Message Template Auto Format enabled
+2018-08-13 21:46:54.5122 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:46:54.5151 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:46:54.5151 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:46:54.5151 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:46:54.5151 Info Found 30 configuration items
+2018-08-13 21:46:54.5151 Info Configuration initialized.
+2018-08-13 21:46:54.5238 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:46:54.6059 Info Message Template Auto Format enabled
+2018-08-13 21:46:54.6059 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:46:54.6071 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:46:54.6071 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:46:54.6071 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:46:54.6071 Info Found 30 configuration items
+2018-08-13 21:46:54.6118 Info Configuration initialized.
+2018-08-13 21:46:54.6174 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:46:54.6174 Info Message Template Auto Format enabled
+2018-08-13 21:46:54.6174 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:46:54.6191 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:46:54.6191 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:46:54.6191 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:46:54.6191 Info Found 30 configuration items
+2018-08-13 21:46:54.6191 Info Configuration initialized.
+2018-08-13 21:46:54.6257 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:47:08.5288 Info Message Template Auto Format enabled
+2018-08-13 21:47:08.5288 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:47:08.5288 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:47:08.5288 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:47:08.5288 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:47:08.5288 Info Found 30 configuration items
+2018-08-13 21:47:08.5316 Info Configuration initialized.
+2018-08-13 21:47:08.5316 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:31.1294 Info Configuration file change detected! Reloading in 1000ms...
+2018-08-13 21:48:32.1322 Info Reloading configuration...
+2018-08-13 21:48:32.1322 Info Reloading configuration...
+2018-08-13 21:48:32.1322 Info Reloading configuration...
+2018-08-13 21:48:32.1322 Info Reloading configuration...
+2018-08-13 21:48:32.1322 Info Reloading configuration...
+2018-08-13 21:48:32.1322 Info Reloading configuration...
+2018-08-13 21:48:32.2057 Info Message Template Auto Format enabled
+2018-08-13 21:48:32.2057 Info Message Template Auto Format enabled
+2018-08-13 21:48:32.2057 Info Message Template Auto Format enabled
+2018-08-13 21:48:32.2057 Info Message Template Auto Format enabled
+2018-08-13 21:48:32.2074 Info Message Template Auto Format enabled
+2018-08-13 21:48:32.2074 Info Message Template Auto Format enabled
+2018-08-13 21:48:32.2074 Info Found 30 configuration items
+2018-08-13 21:48:32.2123 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:48:32.2152 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:48:32.2191 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:48:32.2191 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:48:32.2191 Info Closing old configuration.
+2018-08-13 21:48:32.3177 Info Found 30 configuration items
+2018-08-13 21:48:32.3344 Info Found 30 configuration items
+2018-08-13 21:48:32.3355 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:48:32.3355 Info Found 30 configuration items
+2018-08-13 21:48:32.3355 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:48:32.3355 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:48:32.3355 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:48:32.3355 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:48:32.3355 Info Closing old configuration.
+2018-08-13 21:48:32.3355 Info Found 30 configuration items
+2018-08-13 21:48:32.3390 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:48:32.3390 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:48:32.3390 Info Found 30 configuration items
+2018-08-13 21:48:32.3390 Info Found 30 configuration items
+2018-08-13 21:48:32.3390 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:48:32.3390 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:48:32.3390 Info Closing old configuration.
+2018-08-13 21:48:32.3390 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:48:32.3390 Info Found 30 configuration items
+2018-08-13 21:48:32.3390 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:48:32.3390 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:48:32.3430 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:48:32.3430 Info Closing old configuration.
+2018-08-13 21:48:32.3430 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:48:32.3430 Info Found 30 configuration items
+2018-08-13 21:48:32.3430 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 21:48:32.3507 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:48:32.3511 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:48:32.3511 Info Found 30 configuration items
+2018-08-13 21:48:32.3511 Info Closing old configuration.
+2018-08-13 21:48:32.3511 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 21:48:32.3511 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 21:48:32.3511 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 21:48:32.3511 Info Closing old configuration.
+2018-08-13 21:48:32.3511 Info Found 30 configuration items
+2018-08-13 21:48:32.3511 Info Found 30 configuration items
+2018-08-13 22:15:11.6273 Info Message Template Auto Format enabled
+2018-08-13 22:15:11.6529 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:15:11.8916 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:15:11.8916 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:15:11.9089 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:15:11.9305 Info Found 30 configuration items
+2018-08-13 22:15:15.7222 Info Message Template Auto Format enabled
+2018-08-13 22:15:15.7222 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:15:15.7230 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:15:15.7230 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:15:15.7230 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:15:15.7230 Info Found 30 configuration items
+2018-08-13 22:15:15.7283 Info Configuration initialized.
+2018-08-13 22:15:15.7672 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:15:15.7672 Info Message Template Auto Format enabled
+2018-08-13 22:15:15.7672 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:15:15.7672 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:15:15.7672 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:15:15.7672 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:15:15.7672 Info Found 30 configuration items
+2018-08-13 22:15:15.7711 Info Configuration initialized.
+2018-08-13 22:15:15.7711 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:15:15.8105 Info Message Template Auto Format enabled
+2018-08-13 22:15:15.8105 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:15:15.8111 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:15:15.8111 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:15:15.8111 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:15:15.8111 Info Found 30 configuration items
+2018-08-13 22:15:15.8111 Info Configuration initialized.
+2018-08-13 22:15:15.8167 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:15:15.8167 Info Message Template Auto Format enabled
+2018-08-13 22:15:15.8167 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:15:15.8167 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:15:15.8167 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:15:15.8167 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:15:15.8167 Info Found 30 configuration items
+2018-08-13 22:15:15.8199 Info Configuration initialized.
+2018-08-13 22:15:15.8239 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:15:28.9825 Info Message Template Auto Format enabled
+2018-08-13 22:15:28.9825 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:15:28.9853 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:15:28.9873 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:15:28.9873 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:15:28.9873 Info Found 30 configuration items
+2018-08-13 22:15:28.9924 Info Configuration initialized.
+2018-08-13 22:15:29.0144 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:16:32.8318 Info Message Template Auto Format enabled
+2018-08-13 22:16:32.8567 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:16:33.1308 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:16:33.1346 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:16:33.1604 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:16:33.1998 Info Found 30 configuration items
+2018-08-13 22:16:37.0547 Info Message Template Auto Format enabled
+2018-08-13 22:16:37.0547 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:16:37.0553 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:16:37.0553 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:16:37.0553 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:16:37.0553 Info Found 30 configuration items
+2018-08-13 22:16:37.0553 Info Configuration initialized.
+2018-08-13 22:16:37.1027 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:16:37.1034 Info Message Template Auto Format enabled
+2018-08-13 22:16:37.1034 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:16:37.1034 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:16:37.1034 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:16:37.1034 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:16:37.1034 Info Found 30 configuration items
+2018-08-13 22:16:37.1034 Info Configuration initialized.
+2018-08-13 22:16:37.1095 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:16:37.1501 Info Message Template Auto Format enabled
+2018-08-13 22:16:37.1501 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:16:37.1511 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:16:37.1511 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:16:37.1511 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:16:37.1511 Info Found 30 configuration items
+2018-08-13 22:16:37.1511 Info Configuration initialized.
+2018-08-13 22:16:37.1576 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:16:37.1576 Info Message Template Auto Format enabled
+2018-08-13 22:16:37.1576 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:16:37.1590 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:16:37.1590 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:16:37.1590 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:16:37.1590 Info Found 30 configuration items
+2018-08-13 22:16:37.1590 Info Configuration initialized.
+2018-08-13 22:16:37.1656 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:16:48.1266 Info Message Template Auto Format enabled
+2018-08-13 22:16:48.1266 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:16:48.1292 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:16:48.1400 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:16:48.1453 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:16:48.1840 Info Found 30 configuration items
+2018-08-13 22:16:48.3953 Info Configuration initialized.
+2018-08-13 22:16:48.4059 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:29:17.5683 Info Message Template Auto Format enabled
+2018-08-13 22:29:17.5930 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:29:17.7570 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:29:17.7570 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:29:17.7694 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:29:17.7938 Info Found 30 configuration items
+2018-08-13 22:29:22.1715 Info Message Template Auto Format enabled
+2018-08-13 22:29:22.1715 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:29:22.1715 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:29:22.1715 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:29:22.1715 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:29:22.1715 Info Found 30 configuration items
+2018-08-13 22:29:22.1778 Info Configuration initialized.
+2018-08-13 22:29:22.2157 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:29:22.2157 Info Message Template Auto Format enabled
+2018-08-13 22:29:22.2157 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:29:22.2157 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:29:22.2157 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:29:22.2157 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:29:22.2157 Info Found 30 configuration items
+2018-08-13 22:29:22.2157 Info Configuration initialized.
+2018-08-13 22:29:22.2223 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:29:22.2610 Info Message Template Auto Format enabled
+2018-08-13 22:29:22.2610 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:29:22.2610 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:29:22.2610 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:29:22.2610 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:29:22.2610 Info Found 30 configuration items
+2018-08-13 22:29:22.2635 Info Configuration initialized.
+2018-08-13 22:29:22.2635 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:29:22.2672 Info Message Template Auto Format enabled
+2018-08-13 22:29:22.2672 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:29:22.2672 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:29:22.2672 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:29:22.2672 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:29:22.2672 Info Found 30 configuration items
+2018-08-13 22:29:22.2672 Info Configuration initialized.
+2018-08-13 22:29:22.2730 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:29:33.5345 Info Message Template Auto Format enabled
+2018-08-13 22:29:33.5345 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:29:33.5438 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:29:33.5895 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:29:33.6094 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:29:33.6299 Info Found 30 configuration items
+2018-08-13 22:29:33.6352 Info Configuration initialized.
+2018-08-13 22:29:33.6479 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:30:04.0751 Info Message Template Auto Format enabled
+2018-08-13 22:30:04.0751 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:30:04.0798 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:30:04.0937 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:30:04.1002 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:30:04.1544 Info Found 30 configuration items
+2018-08-13 22:30:04.3191 Info Configuration initialized.
+2018-08-13 22:30:04.3319 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:30:47.1594 Info Message Template Auto Format enabled
+2018-08-13 22:30:47.1594 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:30:47.1671 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:30:47.1671 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:30:47.1671 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:30:47.1727 Info Found 30 configuration items
+2018-08-13 22:30:47.1963 Info Configuration initialized.
+2018-08-13 22:30:47.1963 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:28.2311 Info Message Template Auto Format enabled
+2018-08-13 22:45:28.2434 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:28.3316 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:28.3316 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:28.3394 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:28.3538 Info Found 30 configuration items
+2018-08-13 22:45:32.1813 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.1813 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.1813 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.1813 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.1813 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.1813 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.1813 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.1813 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.1813 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.1813 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.1813 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.1813 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.1813 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.1830 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.1830 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.1830 Info Found 30 configuration items
+2018-08-13 22:45:32.1830 Info Found 30 configuration items
+2018-08-13 22:45:32.1830 Info Found 30 configuration items
+2018-08-13 22:45:32.1884 Info Configuration initialized.
+2018-08-13 22:45:32.2095 Info Configuration initialized.
+2018-08-13 22:45:32.2095 Info Configuration initialized.
+2018-08-13 22:45:32.2453 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.2453 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.2453 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.2453 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.2453 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.2453 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.2453 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.2453 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.2453 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.2470 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.2470 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.2470 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.2470 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.2470 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.2470 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.2470 Info Found 30 configuration items
+2018-08-13 22:45:32.2470 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.2470 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.2470 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.2470 Info Found 30 configuration items
+2018-08-13 22:45:32.2470 Info Found 30 configuration items
+2018-08-13 22:45:32.2470 Info Configuration initialized.
+2018-08-13 22:45:32.2523 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.2523 Info Configuration initialized.
+2018-08-13 22:45:32.2561 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.2561 Info Configuration initialized.
+2018-08-13 22:45:32.2597 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.3020 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.3020 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.3020 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.3032 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.3032 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.3032 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.3032 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.3032 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.3032 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.3032 Info Found 30 configuration items
+2018-08-13 22:45:32.3032 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.3032 Info Configuration initialized.
+2018-08-13 22:45:32.3032 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.3086 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.3086 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.3086 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.3086 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.3086 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.3086 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.3086 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.3086 Info Found 30 configuration items
+2018-08-13 22:45:32.3086 Info Found 30 configuration items
+2018-08-13 22:45:32.3086 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.3086 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.3086 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.3086 Info Found 30 configuration items
+2018-08-13 22:45:32.3086 Info Configuration initialized.
+2018-08-13 22:45:32.3318 Info Configuration initialized.
+2018-08-13 22:45:32.3318 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.3318 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.3318 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.3318 Info Message Template Auto Format enabled
+2018-08-13 22:45:32.3318 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.3318 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:32.3318 Info Configuration initialized.
+2018-08-13 22:45:32.3364 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.3364 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.3364 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.3364 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:32.3364 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.3364 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:32.3364 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:32.3364 Info Found 30 configuration items
+2018-08-13 22:45:32.3364 Info Found 30 configuration items
+2018-08-13 22:45:32.3394 Info Configuration initialized.
+2018-08-13 22:45:32.3603 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:32.3603 Info Configuration initialized.
+2018-08-13 22:45:32.3644 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:45.8394 Info Message Template Auto Format enabled
+2018-08-13 22:45:45.8394 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:45.8394 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:45.8433 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:45.8433 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:45.8433 Info Found 30 configuration items
+2018-08-13 22:45:45.8482 Info Configuration initialized.
+2018-08-13 22:45:45.8606 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:45:50.8248 Info Message Template Auto Format enabled
+2018-08-13 22:45:50.8248 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:45:50.8278 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:45:50.8278 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:45:50.8278 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:45:50.8323 Info Found 30 configuration items
+2018-08-13 22:45:50.8362 Info Configuration initialized.
+2018-08-13 22:45:50.8587 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:46:07.1192 Info Message Template Auto Format enabled
+2018-08-13 22:46:07.1192 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:46:07.1192 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:46:07.1232 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:46:07.1232 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:46:07.1232 Info Found 30 configuration items
+2018-08-13 22:46:07.1277 Info Configuration initialized.
+2018-08-13 22:46:07.1388 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:46:57.7364 Info Message Template Auto Format enabled
+2018-08-13 22:46:57.7364 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:46:57.7672 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:46:57.7672 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:46:57.7672 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:46:57.7714 Info Found 30 configuration items
+2018-08-13 22:46:57.7802 Info Configuration initialized.
+2018-08-13 22:46:57.8025 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:47:34.2164 Info Message Template Auto Format enabled
+2018-08-13 22:47:34.2164 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:47:34.2190 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:47:34.2190 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:47:34.2190 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:47:34.2190 Info Found 30 configuration items
+2018-08-13 22:47:34.2241 Info Configuration initialized.
+2018-08-13 22:47:34.2300 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:47:35.8141 Info Message Template Auto Format enabled
+2018-08-13 22:47:35.8141 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:47:35.8162 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:47:35.8162 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:47:35.8162 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:47:35.8162 Info Found 30 configuration items
+2018-08-13 22:47:35.8216 Info Configuration initialized.
+2018-08-13 22:47:35.8313 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:47:37.6824 Info Message Template Auto Format enabled
+2018-08-13 22:47:37.6824 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:47:37.6849 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:47:37.6870 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:47:37.6870 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:47:37.6870 Info Found 30 configuration items
+2018-08-13 22:47:37.6920 Info Configuration initialized.
+2018-08-13 22:47:37.7042 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:47:39.2157 Info Message Template Auto Format enabled
+2018-08-13 22:47:39.2157 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:47:39.2195 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:47:39.2195 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:47:39.2195 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:47:39.2230 Info Found 30 configuration items
+2018-08-13 22:47:39.2599 Error Failed Watching path '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1' with file '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config' for changes. Exception: System.IO.IOException: The configured user limit (128) on the number of inotify instances has been reached.
+   at System.IO.FileSystemWatcher.StartRaisingEvents()
+   at System.IO.FileSystemWatcher.StartRaisingEventsIfNotDisposed()
+   at System.IO.FileSystemWatcher.set_EnableRaisingEvents(Boolean value)
+   at NLog.Internal.MultiFileWatcher.Watch(String fileName)
+2018-08-13 22:47:39.2665 Info Configuration initialized.
+2018-08-13 22:47:39.2672 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:47:42.2551 Info Message Template Auto Format enabled
+2018-08-13 22:47:42.2551 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:47:42.2551 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:47:42.2551 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:47:42.2551 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:47:42.2551 Info Found 30 configuration items
+2018-08-13 22:47:42.2605 Error Failed Watching path '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1' with file '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config' for changes. Exception: System.IO.IOException: The configured user limit (128) on the number of inotify instances has been reached.
+   at System.IO.FileSystemWatcher.StartRaisingEvents()
+   at System.IO.FileSystemWatcher.StartRaisingEventsIfNotDisposed()
+   at System.IO.FileSystemWatcher.set_EnableRaisingEvents(Boolean value)
+   at NLog.Internal.MultiFileWatcher.Watch(String fileName)
+2018-08-13 22:47:42.2605 Info Configuration initialized.
+2018-08-13 22:47:42.2605 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-13 22:47:45.5343 Info Message Template Auto Format enabled
+2018-08-13 22:47:45.5350 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-13 22:47:45.5350 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-13 22:47:45.5350 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-13 22:47:45.5350 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-13 22:47:45.5350 Info Found 30 configuration items
+2018-08-13 22:47:45.5403 Error Failed Watching path '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1' with file '/home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config' for changes. Exception: System.IO.IOException: The configured user limit (128) on the number of inotify instances has been reached.
+   at System.IO.FileSystemWatcher.StartRaisingEvents()
+   at System.IO.FileSystemWatcher.StartRaisingEventsIfNotDisposed()
+   at System.IO.FileSystemWatcher.set_EnableRaisingEvents(Boolean value)
+   at NLog.Internal.MultiFileWatcher.Watch(String fileName)
+2018-08-13 22:47:45.5403 Info Configuration initialized.
+2018-08-13 22:47:45.5403 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:55:12.4174 Info Message Template Auto Format enabled
+2018-08-17 18:55:12.4395 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:55:12.5513 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:55:12.5513 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:55:12.5634 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:55:12.5857 Info Found 30 configuration items
+2018-08-17 18:55:18.0108 Info Message Template Auto Format enabled
+2018-08-17 18:55:18.0108 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:55:18.0108 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:55:18.0108 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:55:18.0108 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:55:18.0135 Info Found 30 configuration items
+2018-08-17 18:55:18.0184 Info Configuration initialized.
+2018-08-17 18:55:18.0580 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:55:18.0580 Info Message Template Auto Format enabled
+2018-08-17 18:55:18.0580 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:55:18.0580 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:55:18.0580 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:55:18.0580 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:55:18.0580 Info Found 30 configuration items
+2018-08-17 18:55:18.0650 Info Configuration initialized.
+2018-08-17 18:55:18.0859 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:55:18.0896 Info Message Template Auto Format enabled
+2018-08-17 18:55:18.0896 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:55:18.0896 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:55:18.0896 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:55:18.0896 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:55:18.0896 Info Found 30 configuration items
+2018-08-17 18:55:18.0896 Info Configuration initialized.
+2018-08-17 18:55:18.0966 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:55:18.0972 Info Message Template Auto Format enabled
+2018-08-17 18:55:18.0972 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:55:18.0972 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:55:18.0972 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:55:18.0972 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:55:18.0972 Info Found 30 configuration items
+2018-08-17 18:55:18.0972 Info Configuration initialized.
+2018-08-17 18:55:18.1083 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:56:27.2852 Info Message Template Auto Format enabled
+2018-08-17 18:56:27.3078 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:56:27.5559 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:56:27.5585 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:56:27.5765 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:56:27.6018 Info Found 30 configuration items
+2018-08-17 18:56:31.6261 Info Message Template Auto Format enabled
+2018-08-17 18:56:31.6261 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:56:31.6261 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:56:31.6261 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:56:31.6261 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:56:31.6261 Info Found 30 configuration items
+2018-08-17 18:56:31.6327 Info Configuration initialized.
+2018-08-17 18:56:31.6682 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:56:31.6682 Info Message Template Auto Format enabled
+2018-08-17 18:56:31.6682 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:56:31.6693 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:56:31.6693 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:56:31.6693 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:56:31.6693 Info Found 30 configuration items
+2018-08-17 18:56:31.6693 Info Configuration initialized.
+2018-08-17 18:56:31.6746 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:56:31.6783 Info Message Template Auto Format enabled
+2018-08-17 18:56:31.6783 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:56:31.6783 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:56:31.6783 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:56:31.6783 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:56:31.6783 Info Found 30 configuration items
+2018-08-17 18:56:31.6809 Info Configuration initialized.
+2018-08-17 18:56:31.6809 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:56:31.6809 Info Message Template Auto Format enabled
+2018-08-17 18:56:31.6809 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:56:31.6852 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:56:31.6852 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:56:31.6852 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:56:31.6852 Info Found 30 configuration items
+2018-08-17 18:56:31.6852 Info Configuration initialized.
+2018-08-17 18:56:31.6852 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:58:14.7718 Info Message Template Auto Format enabled
+2018-08-17 18:58:14.7832 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:58:14.8737 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:58:14.8737 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:58:14.8811 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:58:14.8955 Info Found 30 configuration items
+2018-08-17 18:58:17.9239 Info Message Template Auto Format enabled
+2018-08-17 18:58:17.9239 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:58:17.9251 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:58:17.9251 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:58:17.9251 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:58:17.9251 Info Found 30 configuration items
+2018-08-17 18:58:17.9317 Info Configuration initialized.
+2018-08-17 18:58:17.9688 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:58:17.9693 Info Message Template Auto Format enabled
+2018-08-17 18:58:17.9693 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:58:17.9693 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:58:17.9693 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:58:17.9693 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:58:17.9693 Info Found 30 configuration items
+2018-08-17 18:58:17.9693 Info Configuration initialized.
+2018-08-17 18:58:17.9749 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:58:17.9787 Info Message Template Auto Format enabled
+2018-08-17 18:58:17.9787 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:58:17.9787 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:58:17.9787 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:58:17.9787 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:58:17.9787 Info Found 30 configuration items
+2018-08-17 18:58:17.9813 Info Configuration initialized.
+2018-08-17 18:58:17.9813 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:58:17.9853 Info Message Template Auto Format enabled
+2018-08-17 18:58:17.9853 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:58:17.9853 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:58:17.9853 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:58:17.9853 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:58:17.9853 Info Found 30 configuration items
+2018-08-17 18:58:17.9853 Info Configuration initialized.
+2018-08-17 18:58:18.0093 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:59:29.3874 Info Message Template Auto Format enabled
+2018-08-17 18:59:29.3970 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:59:29.4989 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:59:29.4989 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:59:29.5074 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:59:29.5245 Info Found 30 configuration items
+2018-08-17 18:59:33.9077 Info Message Template Auto Format enabled
+2018-08-17 18:59:33.9077 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:59:33.9077 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:59:33.9077 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:59:33.9089 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:59:33.9089 Info Found 30 configuration items
+2018-08-17 18:59:33.9143 Info Configuration initialized.
+2018-08-17 18:59:33.9570 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:59:33.9570 Info Message Template Auto Format enabled
+2018-08-17 18:59:33.9570 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:59:33.9570 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:59:33.9570 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:59:33.9570 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:59:33.9570 Info Found 30 configuration items
+2018-08-17 18:59:33.9618 Info Configuration initialized.
+2018-08-17 18:59:33.9655 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:59:33.9702 Info Message Template Auto Format enabled
+2018-08-17 18:59:33.9702 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:59:33.9702 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:59:33.9702 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:59:33.9702 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:59:33.9702 Info Found 30 configuration items
+2018-08-17 18:59:33.9739 Info Configuration initialized.
+2018-08-17 18:59:33.9770 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 18:59:33.9770 Info Message Template Auto Format enabled
+2018-08-17 18:59:33.9770 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 18:59:33.9770 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 18:59:33.9770 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 18:59:33.9770 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 18:59:33.9770 Info Found 30 configuration items
+2018-08-17 18:59:33.9813 Info Configuration initialized.
+2018-08-17 18:59:33.9813 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:10:29.3785 Info Message Template Auto Format enabled
+2018-08-17 19:10:29.4028 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:10:29.6323 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:10:29.6360 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:10:29.6585 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:10:29.6966 Info Found 30 configuration items
+2018-08-17 19:10:33.7488 Info Message Template Auto Format enabled
+2018-08-17 19:10:33.7490 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:10:33.7490 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:10:33.7490 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:10:33.7490 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:10:33.7490 Info Found 30 configuration items
+2018-08-17 19:10:33.7550 Info Configuration initialized.
+2018-08-17 19:10:33.7910 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:10:33.7910 Info Message Template Auto Format enabled
+2018-08-17 19:10:33.7910 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:10:33.7910 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:10:33.7910 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:10:33.7910 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:10:33.7910 Info Found 30 configuration items
+2018-08-17 19:10:33.7939 Info Configuration initialized.
+2018-08-17 19:10:33.7971 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:10:33.8029 Info Message Template Auto Format enabled
+2018-08-17 19:10:33.8029 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:10:33.8029 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:10:33.8029 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:10:33.8029 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:10:33.8029 Info Found 30 configuration items
+2018-08-17 19:10:33.8056 Info Configuration initialized.
+2018-08-17 19:10:33.8090 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:10:33.8090 Info Message Template Auto Format enabled
+2018-08-17 19:10:33.8090 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:10:33.8090 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:10:33.8090 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:10:33.8090 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:10:33.8090 Info Found 30 configuration items
+2018-08-17 19:10:33.8090 Info Configuration initialized.
+2018-08-17 19:10:33.8148 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:11:24.5863 Info Message Template Auto Format enabled
+2018-08-17 19:11:24.5863 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:11:24.5891 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:11:24.5891 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:11:24.5891 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:11:24.5891 Info Found 30 configuration items
+2018-08-17 19:11:24.5948 Info Configuration initialized.
+2018-08-17 19:11:24.6073 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:11:47.2954 Info Message Template Auto Format enabled
+2018-08-17 19:11:47.2954 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:11:47.2986 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:11:47.2986 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:11:47.2986 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:11:47.3019 Info Found 30 configuration items
+2018-08-17 19:11:47.3054 Info Configuration initialized.
+2018-08-17 19:11:47.3171 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:12:19.7735 Info Message Template Auto Format enabled
+2018-08-17 19:12:19.7735 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:12:19.7771 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:12:19.7771 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:12:19.7771 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:12:19.7771 Info Found 30 configuration items
+2018-08-17 19:12:19.7837 Info Configuration initialized.
+2018-08-17 19:12:19.7956 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:12:43.0138 Info Message Template Auto Format enabled
+2018-08-17 19:12:43.0138 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:12:43.0138 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:12:43.0171 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:12:43.0171 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:12:43.0171 Info Found 30 configuration items
+2018-08-17 19:12:43.0215 Info Configuration initialized.
+2018-08-17 19:12:43.0436 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:12:46.7624 Info Message Template Auto Format enabled
+2018-08-17 19:12:46.7624 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:12:46.7624 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:12:46.7650 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:12:46.7650 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:12:46.7699 Info Found 30 configuration items
+2018-08-17 19:12:46.7699 Info Configuration initialized.
+2018-08-17 19:12:46.7753 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:14:33.1421 Info Message Template Auto Format enabled
+2018-08-17 19:14:33.1670 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:14:33.4376 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:14:33.4412 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:14:33.4642 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:14:33.5062 Info Found 30 configuration items
+2018-08-17 19:14:38.0869 Info Message Template Auto Format enabled
+2018-08-17 19:14:38.0869 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:14:38.0869 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:14:38.0869 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:14:38.0869 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:14:38.0890 Info Found 30 configuration items
+2018-08-17 19:14:38.0931 Info Configuration initialized.
+2018-08-17 19:14:38.1331 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:14:38.1331 Info Message Template Auto Format enabled
+2018-08-17 19:14:38.1331 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:14:38.1331 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:14:38.1331 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:14:38.1331 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:14:38.1331 Info Found 30 configuration items
+2018-08-17 19:14:38.1373 Info Configuration initialized.
+2018-08-17 19:14:38.1422 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:14:38.1468 Info Message Template Auto Format enabled
+2018-08-17 19:14:38.1468 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:14:38.1468 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:14:38.1468 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:14:38.1468 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:14:38.1468 Info Found 30 configuration items
+2018-08-17 19:14:38.1499 Info Configuration initialized.
+2018-08-17 19:14:38.1499 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:14:38.1552 Info Message Template Auto Format enabled
+2018-08-17 19:14:38.1552 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:14:38.1552 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:14:38.1552 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:14:38.1552 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:14:38.1571 Info Found 30 configuration items
+2018-08-17 19:14:38.1571 Info Configuration initialized.
+2018-08-17 19:14:38.1797 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:14:52.8515 Info Message Template Auto Format enabled
+2018-08-17 19:14:52.8515 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:14:52.8534 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:14:52.8534 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:14:52.8534 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:14:52.8534 Info Found 30 configuration items
+2018-08-17 19:14:52.8599 Info Configuration initialized.
+2018-08-17 19:14:52.8716 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:15:43.4170 Info Message Template Auto Format enabled
+2018-08-17 19:15:43.4170 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:15:43.4170 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:15:43.4170 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:15:43.4170 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:15:43.4170 Info Found 30 configuration items
+2018-08-17 19:15:43.4971 Info Configuration initialized.
+2018-08-17 19:15:43.5527 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:16:10.2770 Info Message Template Auto Format enabled
+2018-08-17 19:16:10.2856 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:16:10.3879 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:16:10.3894 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:16:10.3991 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:16:10.4212 Info Found 30 configuration items
+2018-08-17 19:16:14.2510 Info Message Template Auto Format enabled
+2018-08-17 19:16:14.2510 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:16:14.2510 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:16:14.2531 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:16:14.2531 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:16:14.2531 Info Found 30 configuration items
+2018-08-17 19:16:14.2601 Info Configuration initialized.
+2018-08-17 19:16:14.2960 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:16:14.2960 Info Message Template Auto Format enabled
+2018-08-17 19:16:14.2960 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:16:14.2971 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:16:14.2971 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:16:14.2971 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:16:14.2971 Info Found 30 configuration items
+2018-08-17 19:16:14.2971 Info Configuration initialized.
+2018-08-17 19:16:14.3033 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:16:14.3068 Info Message Template Auto Format enabled
+2018-08-17 19:16:14.3068 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:16:14.3068 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:16:14.3068 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:16:14.3068 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:16:14.3068 Info Found 30 configuration items
+2018-08-17 19:16:14.3091 Info Configuration initialized.
+2018-08-17 19:16:14.3300 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:16:14.3300 Info Message Template Auto Format enabled
+2018-08-17 19:16:14.3300 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:16:14.3300 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:16:14.3300 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:16:14.3300 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:16:14.3300 Info Found 30 configuration items
+2018-08-17 19:16:14.3338 Info Configuration initialized.
+2018-08-17 19:16:14.3546 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:16:28.4650 Info Message Template Auto Format enabled
+2018-08-17 19:16:28.4650 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:16:28.4650 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:16:28.4650 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:16:28.4650 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:16:28.4650 Info Found 30 configuration items
+2018-08-17 19:16:28.4650 Info Configuration initialized.
+2018-08-17 19:16:28.4650 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:16:31.8022 Info Message Template Auto Format enabled
+2018-08-17 19:16:31.8022 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:16:31.8064 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:16:31.8064 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:16:31.8090 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:16:31.8090 Info Found 30 configuration items
+2018-08-17 19:16:31.8153 Info Configuration initialized.
+2018-08-17 19:16:31.8382 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:17:36.6812 Info Message Template Auto Format enabled
+2018-08-17 19:17:36.7097 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:17:36.7689 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:17:36.7689 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:17:36.7689 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:17:36.7689 Info Found 30 configuration items
+2018-08-17 19:17:36.7784 Info Configuration initialized.
+2018-08-17 19:17:36.7827 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:17:55.8225 Info Message Template Auto Format enabled
+2018-08-17 19:17:55.8268 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:17:55.8828 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:17:55.8828 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:17:55.8828 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:17:55.9107 Info Found 30 configuration items
+2018-08-17 19:17:55.9662 Info Configuration initialized.
+2018-08-17 19:17:55.9662 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:17:59.4168 Info Message Template Auto Format enabled
+2018-08-17 19:17:59.4226 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:17:59.5537 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:17:59.6402 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:17:59.6608 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:17:59.6897 Info Found 30 configuration items
+2018-08-17 19:17:59.7420 Info Configuration initialized.
+2018-08-17 19:17:59.7475 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:19:17.5414 Info Message Template Auto Format enabled
+2018-08-17 19:19:17.5414 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:19:17.6898 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:19:17.6898 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:19:17.6898 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:19:17.6898 Info Found 30 configuration items
+2018-08-17 19:19:17.7158 Info Configuration initialized.
+2018-08-17 19:19:17.7373 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:19:24.0384 Info Message Template Auto Format enabled
+2018-08-17 19:19:24.0384 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:19:24.0384 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:19:24.0384 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:19:24.0409 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:19:24.0499 Info Found 30 configuration items
+2018-08-17 19:19:24.1025 Info Configuration initialized.
+2018-08-17 19:19:24.1356 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:20:24.4070 Info Message Template Auto Format enabled
+2018-08-17 19:20:24.4265 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:20:24.6816 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:20:24.6860 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:20:24.6860 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:20:24.6860 Info Found 30 configuration items
+2018-08-17 19:20:24.6860 Info Configuration initialized.
+2018-08-17 19:20:24.6860 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 19:20:31.1050 Info Message Template Auto Format enabled
+2018-08-17 19:20:31.1050 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 19:20:31.1050 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 19:20:31.1050 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 19:20:31.1050 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 19:20:31.1050 Info Found 30 configuration items
+2018-08-17 19:20:31.1345 Info Configuration initialized.
+2018-08-17 19:20:31.1651 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:02:51.2026 Info Message Template Auto Format enabled
+2018-08-17 21:02:51.2026 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:02:51.2212 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:02:51.2212 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:02:51.2212 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:02:51.2212 Info Found 30 configuration items
+2018-08-17 21:02:51.2212 Info Configuration initialized.
+2018-08-17 21:02:51.2212 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:02:58.6255 Info Message Template Auto Format enabled
+2018-08-17 21:02:58.6344 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:02:58.6967 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:02:58.6972 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:02:58.6972 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:02:58.6972 Info Found 30 configuration items
+2018-08-17 21:02:58.7222 Info Configuration initialized.
+2018-08-17 21:02:58.7276 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:08:31.7252 Info Message Template Auto Format enabled
+2018-08-17 21:08:31.7252 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:08:31.7783 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:08:31.7783 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:08:31.7783 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:08:31.7783 Info Found 30 configuration items
+2018-08-17 21:08:31.8030 Info Configuration initialized.
+2018-08-17 21:08:31.8030 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:08:41.9978 Info Message Template Auto Format enabled
+2018-08-17 21:08:41.9978 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:08:42.1706 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:08:42.1706 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:08:42.1706 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:08:42.1706 Info Found 30 configuration items
+2018-08-17 21:08:42.1706 Info Configuration initialized.
+2018-08-17 21:08:42.1761 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:08:53.6191 Info Message Template Auto Format enabled
+2018-08-17 21:08:53.6228 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:08:53.6944 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:08:53.6944 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:08:53.6944 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:08:53.6944 Info Found 30 configuration items
+2018-08-17 21:08:53.7693 Info Configuration initialized.
+2018-08-17 21:08:53.7976 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:09:10.5801 Info Message Template Auto Format enabled
+2018-08-17 21:09:10.5801 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:09:10.6016 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:09:10.6016 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:09:10.6016 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:09:10.6016 Info Found 30 configuration items
+2018-08-17 21:09:10.6239 Info Configuration initialized.
+2018-08-17 21:09:10.6344 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:09:21.5630 Info Message Template Auto Format enabled
+2018-08-17 21:09:21.5630 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:09:21.5630 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:09:21.5651 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:09:21.5651 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:09:21.5700 Info Found 30 configuration items
+2018-08-17 21:09:21.5700 Info Configuration initialized.
+2018-08-17 21:09:21.5768 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:09:37.5816 Info Message Template Auto Format enabled
+2018-08-17 21:09:37.5816 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:09:37.5816 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:09:37.5816 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:09:37.5816 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:09:37.5816 Info Found 30 configuration items
+2018-08-17 21:09:37.6086 Info Configuration initialized.
+2018-08-17 21:09:37.6158 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:09:41.8661 Info Message Template Auto Format enabled
+2018-08-17 21:09:41.8701 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:09:41.8701 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:09:41.8701 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:09:41.8701 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:09:41.8847 Info Found 30 configuration items
+2018-08-17 21:09:41.9423 Info Configuration initialized.
+2018-08-17 21:09:41.9464 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:09:49.7083 Info Message Template Auto Format enabled
+2018-08-17 21:09:49.7083 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:09:49.7097 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:09:49.7097 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:09:49.7097 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:09:49.7097 Info Found 30 configuration items
+2018-08-17 21:09:49.7172 Info Configuration initialized.
+2018-08-17 21:09:49.7172 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:09:53.4709 Info Message Template Auto Format enabled
+2018-08-17 21:09:53.4709 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:09:53.4709 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:09:53.4709 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:09:53.4709 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:09:53.5465 Info Found 30 configuration items
+2018-08-17 21:09:53.5690 Info Configuration initialized.
+2018-08-17 21:09:53.5986 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:09:57.7174 Info Message Template Auto Format enabled
+2018-08-17 21:09:57.7174 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:09:57.7174 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:09:57.7174 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:09:57.7174 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:09:57.7174 Info Found 30 configuration items
+2018-08-17 21:09:57.7420 Info Configuration initialized.
+2018-08-17 21:09:57.7454 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:17:58.6055 Info Message Template Auto Format enabled
+2018-08-17 21:17:58.6146 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:17:58.7146 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:17:58.7146 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:17:58.7229 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:17:58.7391 Info Found 30 configuration items
+2018-08-17 21:18:03.2522 Info Message Template Auto Format enabled
+2018-08-17 21:18:03.2522 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:18:03.2531 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:18:03.2531 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:18:03.2531 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:18:03.2531 Info Found 30 configuration items
+2018-08-17 21:18:03.2587 Info Configuration initialized.
+2018-08-17 21:18:03.2944 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:18:03.2944 Info Message Template Auto Format enabled
+2018-08-17 21:18:03.2944 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:18:03.2944 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:18:03.2944 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:18:03.2944 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:18:03.2944 Info Found 30 configuration items
+2018-08-17 21:18:03.2975 Info Configuration initialized.
+2018-08-17 21:18:03.3011 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:18:03.3011 Info Message Template Auto Format enabled
+2018-08-17 21:18:03.3011 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:18:03.3055 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:18:03.3055 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:18:03.3055 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:18:03.3055 Info Found 30 configuration items
+2018-08-17 21:18:03.3055 Info Configuration initialized.
+2018-08-17 21:18:03.3112 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:18:03.3112 Info Message Template Auto Format enabled
+2018-08-17 21:18:03.3112 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:18:03.3112 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:18:03.3133 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:18:03.3133 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:18:03.3133 Info Found 30 configuration items
+2018-08-17 21:18:03.3133 Info Configuration initialized.
+2018-08-17 21:18:03.3133 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:19:23.6085 Info Message Template Auto Format enabled
+2018-08-17 21:19:23.6085 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:19:23.6104 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:19:23.6104 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:19:23.6104 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:19:23.6137 Info Found 30 configuration items
+2018-08-17 21:19:23.6137 Info Configuration initialized.
+2018-08-17 21:19:23.6391 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:19:27.6838 Info Message Template Auto Format enabled
+2018-08-17 21:19:27.6852 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:19:27.6852 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:19:27.6852 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:19:27.6852 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:19:27.6902 Info Found 30 configuration items
+2018-08-17 21:19:27.6937 Info Configuration initialized.
+2018-08-17 21:19:27.7158 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:19:57.9903 Info Message Template Auto Format enabled
+2018-08-17 21:19:57.9903 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:19:57.9934 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:19:57.9934 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:19:57.9934 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:19:57.9934 Info Found 30 configuration items
+2018-08-17 21:19:57.9934 Info Configuration initialized.
+2018-08-17 21:19:57.9989 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.
+2018-08-17 21:20:14.8858 Info Message Template Auto Format enabled
+2018-08-17 21:20:14.9131 Info Loading assembly: NLog.Web.AspNetCore
+2018-08-17 21:20:15.1380 Info Adding target AsyncWrapper Target[default](File Target[default_wrapped])
+2018-08-17 21:20:15.1553 Info Adding target AsyncWrapper Target[microsoft](File Target[microsoft_wrapped])
+2018-08-17 21:20:15.1693 Info Configured from an XML element in /home/bondo/projects/translate-spa/bin/Debug/netcoreapp2.1/nlog.config...
+2018-08-17 21:20:15.2442 Info Found 30 configuration items
+2018-08-17 21:20:15.4677 Info Configuration initialized.
+2018-08-17 21:20:15.4906 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.8.8046. Product version: 4.5.8.

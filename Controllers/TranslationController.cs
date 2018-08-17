@@ -16,24 +16,25 @@ using translate_spa.Repositories;
 
 namespace translate_spa.Controllers
 {
-
-    public class TranslationController : Controller
+    public class TranslationController : BaseController
     {
 
-        private readonly ILogger<TranslationController> _log;
+        //private readonly ILogger<TranslationController> _log;
 
         public TranslationController(ILogger<TranslationController> log)
         {
-            _log = log;
+            //  _log = log;
         }
 
         [HttpGet]
         public async Task<IEnumerable<Translation>> Index()
         {
-            _log.LogDebug(null, null, "Getting all translations");
+            _log.Debug("Getting all translations");
             var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
-            var translations = baseRepository.GetAll();
-            return await translations;
+            var translations = await baseRepository.GetAll();
+
+            _log.Debug($"Index: returning '{translations.Count()}'");
+            return translations;
         }
 
         [HttpPost]
@@ -56,6 +57,7 @@ namespace translate_spa.Controllers
 
             var result = baseRepository.GetSingleByExpressionSync(x => x.Key == translation.Key);
 
+            _log.Debug($"Adding: '{result.ToString()}'");
             StatusCode(StatusCodes.Status201Created);
 
             return result;
@@ -76,7 +78,13 @@ namespace translate_spa.Controllers
             }
 
             var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
+            var existing = baseRepository.SingleOrDefaultSync(x => x.Key == translation.Key && x.Branch == translation.Branch);
+            if (existing != null && existing.Id != translation.Id)
+            {
+                throw new Exception($"Adding dublicate translation-key not allowed. the used translationkey are allready in use");
+            }
 
+            _log.Debug($"Update: Updating '{translation.Id}'::{translation.Key}'");
             await baseRepository.Update(item: translation, key: translation.Id);
 
             StatusCode(StatusCodes.Status202Accepted);
@@ -99,6 +107,8 @@ namespace translate_spa.Controllers
                 throw new Exception($"Could not find a record with id of '{id}'.");
             }
 
+            _log.Debug($"Delete: Deleting '{id}'::{existing.Key}'");
+
             await baseRepository.Delete(x => x.Id == id);
 
             StatusCode(StatusCodes.Status202Accepted);
@@ -112,6 +122,7 @@ namespace translate_spa.Controllers
             var queryResult = result.Where(x => x.Key.StartsWith(id + ".", System.StringComparison.CurrentCultureIgnoreCase)).ToList();
 
             queryResult.AddRange(result.Where(x => CommenKey(x.Key)));
+            _log.Debug($"Query: returning '{queryResult.Count()}' environment '{id}'");
 
             return queryResult;
         }
@@ -123,6 +134,7 @@ namespace translate_spa.Controllers
             var result = baseRepository.GetAllSync();
             var queryResult = result.Where(x => x.Key.StartsWith(env + ".", System.StringComparison.CurrentCultureIgnoreCase)).ToList();
 
+            _log.Debug($"AngularQuery: returning '{queryResult.Count()}' entries for language'{id}' on environment '{env}'");
             var resultDictionary = queryResult.ToDictionary(t => t.Key, t => t.GetByLanguage(id));
 
             var jsonResult = JsonHelper.Unflatten(resultDictionary);
@@ -141,16 +153,18 @@ namespace translate_spa.Controllers
         public async Task updateFromJson([FromBody] List<Translation> translations)
         {
             var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
-            //var taskList = translations.Select(x => UpdateTranslation(baseRepository, x));
             var taskList = new List<Task>();
             foreach (var item in translations)
             {
                 var exist = baseRepository.AnySync(x => x.Key == item.Key && x.Branch == item.Branch);
                 if (exist)
                 {
+                    _log.Debug($"updateFromJson: Key {item.Key} allready exist, updating");
                     taskList.Add(UpdateTranslation(baseRepository, item));
                     continue;
                 }
+
+                _log.Debug($"updateFromJson: adding {item.ToString()}");
                 taskList.Add(AddTranslation(baseRepository, item));
             }
 
@@ -184,9 +198,11 @@ namespace translate_spa.Controllers
                 if (existing != null)
                 {
                     item.Id = existing.Id;
+                    _log.Debug($"updateFromOldJson: Key {item.Key} allready exist, updating");
                     taskList.Add(baseRepository.ReplaceOne(existing, item));
                     continue;
                 }
+                _log.Debug($"updateFromOldJson: adding {item.ToString()}");
                 taskList.Add(AddTranslation(baseRepository, item));
             }
 
@@ -200,11 +216,13 @@ namespace translate_spa.Controllers
 
         async Task<Task> AddTranslation(BaseRepository<Translation> baseRepo, Translation translation)
         {
+            _log.Debug($"AddTranslation: adding {translation.ToString()}");
             return baseRepo.Add(translation);
         }
 
         async Task<Task> UpdateTranslation(BaseRepository<Translation> baseRepo, Translation translation)
         {
+            _log.Debug($"UpdateTranslation: updating {translation.ToString()}");
             return baseRepo.Update(x => x.Key == translation.Key && x.Branch == translation.Branch, translation);
         }
     }

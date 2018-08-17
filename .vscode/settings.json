@@ -1,0 +1,4 @@
+{
+	"appService.defaultWebAppToDeploy": "/subscriptions/44ebe36a-8222-4079-a824-abcdec58af6f/resourceGroups/translations-bon-do/providers/Microsoft.Web/sites/translations-bon-do",
+	"appService.deploySubpath": ""
+}

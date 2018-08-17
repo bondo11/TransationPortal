@@ -1,9 +1,10 @@
 using System.Text;
+
 using Newtonsoft.Json;
 
-namespace BaseupWeb.Models.Security
+namespace translate_spa.Models.Security
 {
-	public class CspReportRequest
+    public class CspReportRequest
     {
         [JsonProperty(PropertyName = "csp-report")]
         public CspReport CspReport { get; set; }
