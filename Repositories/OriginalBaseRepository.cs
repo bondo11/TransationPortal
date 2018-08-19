@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
+using translate_spa.Models;
 using translate_spa.Models.Interfaces;
 using translate_spa.MongoDB.Interfaces;
 
 namespace translate_spa.Repositories
 {
-    public class BaseRepository<T> : IRepository<T> where T : class, IEntity
+    public class OriginalBaseRepository<T> : IRepository<T> where T : class, ITranslation
     {
-        public BaseRepository(IDbBuilder dbBuilder, IMongoDatabase mongoDatabase)
+        public OriginalBaseRepository(IDbBuilder dbBuilder, IMongoDatabase mongoDatabase)
         {
             this.DbBuilder = dbBuilder;
             this.MongoDatabase = mongoDatabase;
@@ -26,7 +27,7 @@ namespace translate_spa.Repositories
 
         protected IMongoDatabase MongoDatabase { get; set; }
 
-        public BaseRepository(IDbBuilder builder)
+        public OriginalBaseRepository(IDbBuilder builder)
         {
             DbBuilder = builder;
             Initialize();
@@ -81,10 +82,14 @@ namespace translate_spa.Repositories
                 MongoCollection.Indexes.CreateOne(indexDefinition);
                 */
 
-                var indexBuilder = Builders<T>.IndexKeys;
-                var indexModel = new CreateIndexModel<T>(indexBuilder.Ascending(x => x.Key));
+                var indexDefinition = Builders<T>.IndexKeys.Combine(
+                    Builders<T>.IndexKeys.Ascending(x => x.Id),
+                    Builders<T>.IndexKeys.Ascending(x => x.Key),
+                    Builders<T>.IndexKeys.Ascending(x => x.Branch),
+                    Builders<T>.IndexKeys.Ascending(x => x.Environment)
+                );
 
-                MongoCollection.Indexes.CreateOne(indexModel);
+                MongoCollection.Indexes.CreateOne(indexDefinition);
             }
             catch (Exception exception)
             {
@@ -123,9 +128,14 @@ namespace translate_spa.Repositories
             await MongoCollection.InsertOneAsync(entity);
         }
 
-        public async Task AddMany(ICollection<T> entities)
+        public async Task AddMany(IEnumerable<T> entities)
         {
             await MongoCollection.InsertManyAsync(entities);
+        }
+
+        public void AddManySync(IEnumerable<T> translations)
+        {
+            MongoCollection.InsertMany(translations);
         }
 
         public void AddManySync(ICollection<T> entities)
@@ -256,11 +266,35 @@ namespace translate_spa.Repositories
             }
         }
 
+        public async Task ReplaceOne(T entity)
+        {
+            try
+            {
+                await MongoCollection.ReplaceOneAsync(FilterId(entity.Id), entity);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.StackTrace);
+            }
+        }
+
         public async Task ReplaceOne(Expression<Func<T, bool>> filter, T newValue)
         {
             try
             {
                 await MongoCollection.FindOneAndReplaceAsync(filter: filter, replacement: newValue);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.StackTrace);
+            }
+        }
+
+        public void ReplaceOneSync(T newValue)
+        {
+            try
+            {
+                MongoCollection.ReplaceOne(FilterId(newValue.Id), newValue);
             }
             catch (Exception exception)
             {
@@ -286,6 +320,13 @@ namespace translate_spa.Repositories
         {
             var findFluent = BuildFindFluent(filter, sort, projection);
             return findFluent.ToList();
+        }
+
+        public ICollection<T> GetByExpressionSync(Expression<Func<T, bool>> predicate)
+        {
+            var filter = predicate.Compile();
+            var result = MongoCollection.AsQueryable().Where(filter);
+            return result.ToList();
         }
 
         public async Task<ICollection<T>> GetByExpression(Expression<Func<T, bool>> filter,
@@ -348,6 +389,11 @@ namespace translate_spa.Repositories
         {
             var findFluent = BuildFindFluent(filter, sort, projection);
             return findFluent.Limit(1).Skip(index - 1).FirstOrDefault();
+        }
+
+        public T GetSingleByExpressionSync(Expression<Func<T, bool>> filter)
+        {
+            return MongoCollection.Find(filter).Single();
         }
 
         public async Task<bool> Any(
@@ -415,12 +461,20 @@ namespace translate_spa.Repositories
 
         public T SingleOrDefaultSync(Expression<Func<T, bool>> where)
         {
-            return MongoCollection.Find(where).SingleOrDefault();
+            var filter = where.Compile();
+            var result = MongoCollection.AsQueryable()
+                .Where(filter);
+            return result.SingleOrDefault();
         }
 
         public Task<T> SingleOrDefault(Expression<Func<T, bool>> where)
         {
             return MongoCollection.Find(where).SingleOrDefaultAsync();
+        }
+
+        public async Task AddManyAsync(ICollection<T> entities)
+        {
+            await MongoCollection.InsertManyAsync(entities);
         }
     }
 }

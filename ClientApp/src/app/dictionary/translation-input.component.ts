@@ -28,6 +28,7 @@ import { Translation } from '../models/transation';
     </td>`
 })
 export class TranslationInputComponent {
+  // tslint:disable-next-line:no-input-rename
   @Input('translation')
   translation: Translation;
 

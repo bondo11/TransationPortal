@@ -15,24 +15,43 @@ using translate_spa.Utilities;
 
 namespace translate_spa.Models
 {
-
-    [Serializable]
-    public class Translation : IEntity
+    public class Translation : ITranslation, IEquatable<Translation>
     {
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonId]
+
         public string Id { get; set; }
 
+        [BsonElement("key")]
         public string Key { get; set; }
 
+        [BsonElement("da")]
         public string Da { get; set; }
 
+        [BsonElement("en")]
         public string En { get; set; }
 
+        [BsonElement("sv")]
         public string Sv { get; set; }
 
+        [BsonElement("nb")]
         public string Nb { get; set; }
 
-        public string Branch { get; set; }
+        [BsonElement("branch")]
+        [BsonIgnoreIfNull]
+        public string Branch { get; set; } = string.Empty;
+
+        [BsonElement("environment")]
+        [BsonIgnoreIfNull]
+        public TranslationsEnvironment? Environment { get; set; }
+
+        /*  public Translation()
+         {
+             new SetEnvironmentFromKey(this).Execute();
+         } */
+        public void SetNewId()
+        {
+            this.Id = ObjectId.GenerateNewId().ToString();
+        }
 
         public string GetByLanguage(Language lang)
         {
@@ -41,6 +60,14 @@ namespace translate_spa.Models
             var property = type.GetProperty(fieldName);
             var value = (string)property.GetValue(this, null);
             return value;
+        }
+
+        public void SetValueByLanguage(Language lang, string value)
+        {
+            var fieldName = lang.ToString();
+            var type = this.GetType();
+            var property = type.GetProperty(fieldName);
+            property.SetValue(this, value);
         }
 
         public Dictionary<string, string> GetProperties()
@@ -68,6 +95,40 @@ namespace translate_spa.Models
             }
 
             return stringBuilder.ToString();
+        }
+
+        public bool Equals(Translation other)
+        {
+            if (this.Id != other.Id)
+            {
+                return false;
+            }
+
+            if (!this.Key.Equals(other.Key, StringComparison.CurrentCulture))
+            {
+                return false;
+            }
+
+            var values = (Language[])Enum.GetValues(typeof(Language));
+            foreach (var language in values)
+            {
+                if (!string.Equals(this.GetByLanguage(language), other.GetByLanguage(language)))
+                {
+                    return false;
+                }
+            }
+
+            if (!string.Equals(this.Branch, other.Branch))
+            {
+                return false;
+            }
+
+            if (this.Environment != other.Environment)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

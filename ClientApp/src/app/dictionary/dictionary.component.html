@@ -1,6 +1,21 @@
+<div class="loading" *ngIf="loading">
+    <div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </div>
+    <span>loading</span>
+</div>
 <h1>esignatur dictionary</h1>
 <p></p>
 <input type='text' [(ngModel)]='filter' placeholder="søg" />
+<!-- <input type="text" [placeholder]="query" matInput [formControl]="myControl" [matAutocomplete]="auto">
+<mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+    </mat-option>
+</mat-autocomplete> -->
 <p *ngIf="!translations"><em>Loading...</em></p>
 <table class='table' *ngIf="translations">
     <thead>
@@ -15,8 +30,7 @@
     </thead>
     <tbody translation-add [translations]="translations"></tbody>
     <tbody>
-        <tr *ngFor="let translation of filteredTranslations()" translation-row [translation]="translation"
-            [translations]="translations">
+        <tr *ngFor="let translation of filteredTranslations()" translation-row [translation]="translation" [translations]="translations">
         </tr>
     </tbody>
 </table>

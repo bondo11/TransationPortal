@@ -1,14 +1,33 @@
-<h1>Hello, world!</h1>
-<p>Welcome to your new single-page application, built with:</p>
-<ul>
-  <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-  <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
-  <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-</ul>
-<p>To help you get started, we've also set up:</p>
-<ul>
-  <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-  <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-  <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
-</ul>
-<p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>
+<div class="container">
+    <h1>esignatur's oversættelsesportal</h1>
+    <p>Velkommen til vores nye oversættelsesportal, skrevet i dotnet core 2.1.1 på en mongodb og angular 6:</p>
+    <p>&nbsp;</p>
+    <div class="header float-left">
+        <h2>Guide</h2>
+        <p>
+            Skriv keys i PascalSCase, og seperer med punktum(.). Punktum seperering skal indikere hvor oversættelsen bliver brugt. E.g.
+            "Desktop.Cpr.AddSigner.Name" vil indikere at oversættelsen hører til i desktop appen, på cpr siden, under AddSigner
+            sektionen, og selve oversættelsen hedder "Name".
+        </p>
+        <p>
+            Man kan hente en json af oversættelser ved at kalde endpointet:
+        </p>
+        <pre>
+curl -k {{baseUrl}}api/translation
+      </pre> Man kan specificere ved uddybende at uddybe sit miljø, fx:
+        <pre>
+curl -k {{baseUrl}}api/translation/query/[env]
+curl -k {{baseUrl}}api/translation/query/portal
+curl -k {{baseUrl}}api/translation/query/desktop
+curl -k {{baseUrl}}api/translation/query/sign
+curl -k {{baseUrl}}api/translation/query/web
+			</pre> Når man henter oversættelser til Desktop-appen, skal det hentes individuelt til hvert sprog:
+        <pre>
+curl -k {{baseUrl}}api/AngularQuery/[env]/[lang]
+curl -k {{baseUrl}}api/translation/AngularQuery/desktop/da
+curl -k {{baseUrl}}api/translation/AngularQuery/desktop/en
+curl -k {{baseUrl}}api/translation/AngularQuery/desktop/sv
+curl -k {{baseUrl}}api/translation/AngularQuery/desktop/nb
+			</pre>
+    </div>
+</div>

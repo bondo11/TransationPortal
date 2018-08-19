@@ -20,6 +20,20 @@ li.link-active a, li.link-active a:hover, li.link-active a:focus {
     a, p, input, textarea, b, h1, h2, h3, h4, h5, h6 {
         font-family: Raleway;
     }
+    .submenu {
+        a {
+            color: #fff;
+        }
+        i {
+            width: 3rem;
+        }
+        li a {
+            font-size: 1.7rem;
+        }
+    }
+    ul.submenu {
+        padding: 0;
+    }
 }
 
 .navbar-inverse {
@@ -41,6 +55,9 @@ li.link-active a, li.link-active a:hover, li.link-active a:focus {
         border-radius: 0px;
         border-width: 0px;
         height: 100%;
+        li {
+            list-style: none;
+        }
     }
     .navbar-header {
         float: none;

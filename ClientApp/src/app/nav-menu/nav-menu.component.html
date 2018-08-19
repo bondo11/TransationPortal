@@ -13,16 +13,60 @@
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
             <ul class='nav navbar-nav'>
-                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-                    <a [routerLink]='["/"]' (click)='collapse()'>
-                        <span class='glyphicon glyphicon-home'></span> Home
+                <li *ngFor="let item of menuitems">
+                    <!--  [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'> -->
+                    <a *ngIf="item.subItems.length === 0" [routerLink]='[item.baseUrl]' (click)='collapse()'>
+                      <i class="{{ item.icon }}'"></i> {{item.title}}
                     </a>
+                    <a *ngIf="item.subItems.length > 0" class="dropdown-toggle">
+                        <i class='{{ item.icon }}'></i> {{item.title}}
+                    </a>
+                    <ul *ngIf="item.subItems.length > 0" class="submenu">
+                        <li *ngFor="let subitem of item.subItems">
+                            <a [routerLink]='[subitem.baseUrl]' [queryParams]="subitem.options" (click)='collapse()'>
+                                <i class='{{ subitem.icon }}'></i> {{subitem.title}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- <li [routerLinkActive]='["link-active"]'>
+                    <a class="dropdown-toggle">{{choice}}</a>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="item in subitems">
+                            <a>{{item}}</a>
+                        </li>
+                    </ul>
                 </li>
                 <li [routerLinkActive]='["link-active"]'>
                     <a [routerLink]='["/dictionary"]' (click)='collapse()'>
-                        <span class='glyphicon glyphicon-th-list'></span> Dictionary
+                        <span class='glyphicon glyphicon-th-list'></span> All
                     </a>
                 </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/dictionary"]' [queryParams]="{ env: 'desktop', branch: null }" (click)='collapse()'>
+                        <span class='glyphicon glyphicon-th-list'></span> new desktopapp
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/dictionary"]' [queryParams]="{ env: 'desktop', branch: 'desktop6' }" (click)='collapse()'>
+                        <span class='glyphicon glyphicon-th-list'></span> old desktop
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/dictionary"]' [queryParams]="{ env: 'sign', branch: null }" (click)='collapse()'>
+                        <span class='glyphicon glyphicon-th-list'></span> sign
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/dictionary"]' [queryParams]="{ env: 'web', branch: null }" (click)='collapse()'>
+                        <span class='glyphicon glyphicon-th-list'></span> web
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/dictionary"]' [queryParams]="{ env: 'portal', branch: null }" (click)='collapse()'>
+                        <span class='glyphicon glyphicon-th-list'></span> portal
+                    </a>
+                </li> -->
             </ul>
         </div>
     </div>

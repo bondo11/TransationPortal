@@ -6,6 +6,6 @@ namespace translate_spa.MongoDB.Interfaces
     public interface IBaseContext
     {
         IRepository<T> ResolveRepository<T>()
-        where T : IEntity;
+        where T : ITranslation;
     }
 }

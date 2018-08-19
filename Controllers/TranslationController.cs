@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Http;
@@ -9,32 +10,30 @@ using Microsoft.Extensions.Logging;
 
 using Newtonsoft.Json;
 
+using translate_spa.Actions;
 using translate_spa.Controllers.ActionFilters;
 using translate_spa.Models;
+using translate_spa.Models.Interfaces;
+using translate_spa.MongoDB;
 using translate_spa.MongoDB.DbBuilder;
+using translate_spa.Querys;
 using translate_spa.Repositories;
+using translate_spa.Utilities;
 
 namespace translate_spa.Controllers
 {
     public class TranslationController : BaseController
     {
-
-        //private readonly ILogger<TranslationController> _log;
-
-        public TranslationController(ILogger<TranslationController> log)
-        {
-            //  _log = log;
-        }
-
         [HttpGet]
         public async Task<IEnumerable<Translation>> Index()
         {
             _log.Debug("Getting all translations");
-            var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
-            var translations = await baseRepository.GetAll();
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
+            var predicate = PredicateBuilder.True<Translation>();
+            predicate = new SetBranchPedicate(predicate, _log).Execute(_Branch);
 
-            _log.Debug($"Index: returning '{translations.Count()}'");
-            return translations;
+            var result = new GetFromQuery(mongoRepository, _log).Execute(predicate);
+            return result;
         }
 
         [HttpPost]
@@ -46,21 +45,10 @@ namespace translate_spa.Controllers
             {
                 throw new Exception($"translation cannot have an empty key. Please set a valid key.");
             }
-            var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
-            var existing = await baseRepository.Any(x => x.Key == translation.Key);
-            if (existing)
-            {
-                throw new Exception($"Adding dublicate translation-key not allowed. the used translationkey are allready in use");
-            }
 
-            baseRepository.AddSync(translation);
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
 
-            var result = baseRepository.GetSingleByExpressionSync(x => x.Key == translation.Key);
-
-            _log.Debug($"Adding: '{result.ToString()}'");
-            StatusCode(StatusCodes.Status201Created);
-
-            return result;
+            return new AddTranslation(mongoRepository, _log).Execute(translation)as Translation;
         }
 
         [HttpPatch]
@@ -72,20 +60,20 @@ namespace translate_spa.Controllers
             {
                 throw new Exception($"no id has been given.");
             }
+
             if (string.IsNullOrWhiteSpace(translation.Key))
             {
                 throw new Exception($"translation cannot have an empty key. Please set a valid key.");
             }
 
-            var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
-            var existing = baseRepository.SingleOrDefaultSync(x => x.Key == translation.Key && x.Branch == translation.Branch);
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
+            var existing = mongoRepository.SingleOrDefault(x => x.Key == translation.Key && x.Branch == translation.Branch);
             if (existing != null && existing.Id != translation.Id)
             {
                 throw new Exception($"Adding dublicate translation-key not allowed. the used translationkey are allready in use");
             }
 
-            _log.Debug($"Update: Updating '{translation.Id}'::{translation.Key}'");
-            await baseRepository.Update(item: translation, key: translation.Id);
+            new UpdateTranslation(mongoRepository, _log).Execute(translation);
 
             StatusCode(StatusCodes.Status202Accepted);
         }
@@ -98,79 +86,83 @@ namespace translate_spa.Controllers
                 throw new Exception($"no id has been given.");
             }
 
-            var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
 
-            var existing = await baseRepository.GetSingleByExpression(x => x.Id == id);
+            _log.Debug($"Delete: Deleting '{id}'");
 
-            if (existing == null)
-            {
-                throw new Exception($"Could not find a record with id of '{id}'.");
-            }
-
-            _log.Debug($"Delete: Deleting '{id}'::{existing.Key}'");
-
-            await baseRepository.Delete(x => x.Id == id);
+            mongoRepository.Delete(id);
 
             StatusCode(StatusCodes.Status202Accepted);
         }
 
-        [HttpGet("~/api/[controller]/[action]/{id}")]
-        public async Task<IEnumerable<Translation>> Query(string id)
+        [HttpGet("~/api/[controller]/[action]/{env}")]
+        public async Task<IEnumerable<Translation>> Query(TranslationsEnvironment env)
         {
-            var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
-            var result = baseRepository.GetAllSync();
-            var queryResult = result.Where(x => x.Key.StartsWith(id + ".", System.StringComparison.CurrentCultureIgnoreCase)).ToList();
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
+            var queryExpression = PredicateBuilder.True<Translation>();
 
-            queryResult.AddRange(result.Where(x => CommenKey(x.Key)));
-            _log.Debug($"Query: returning '{queryResult.Count()}' environment '{id}'");
+            queryExpression = queryExpression.And(x => x.Environment == env);
+
+            /* if (_Branch.HasBranch)
+            {
+                _log.Debug($"Query: adding Branch predicate for branch: '{_Branch.Value}'");
+
+                queryExpression = queryExpression.And(x => x.Branch == null);
+            }
+
+            if (env != TranslationsEnvironment.Desktop && env != TranslationsEnvironment.OldDesktop)
+            {
+                queryExpression = queryExpression.Or(x => x.Environment == TranslationsEnvironment.Common);
+            } */
+
+            var queryResult = mongoRepository.Query(queryExpression).ToList();
+
+            _log.Debug($"Query: returning '{queryResult.Count()}' environment '{env.ToString()}''");
 
             return queryResult;
         }
 
-        [HttpGet("~/api/[controller]/[action]/{env}/{id}")]
-        public async Task<JsonResult> AngularQuery(Language id, string env)
+        [HttpGet("~/api/[controller]/[action]/{env}/{lang}")]
+        public async Task<JsonResult> AngularQuery(Language lang, string env)
         {
-            var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
-            var result = baseRepository.GetAllSync();
-            var queryResult = result.Where(x => x.Key.StartsWith(env + ".", System.StringComparison.CurrentCultureIgnoreCase)).ToList();
+            var environment = new GetEnvironment(env, _log, true);
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
+            var predicate = PredicateBuilder.True<Translation>();
 
-            _log.Debug($"AngularQuery: returning '{queryResult.Count()}' entries for language'{id}' on environment '{env}'");
-            var resultDictionary = queryResult.ToDictionary(t => t.Key, t => t.GetByLanguage(id));
+            if (_Branch.HasBranch)
+            {
+                predicate = predicate.And(x => x.Branch == _Branch.Value);
+            }
+
+            predicate = predicate.And(x => x.Environment == environment.Value);
+
+            var result = mongoRepository.Query(predicate);
+            _log.Debug($"AngularQuery: returning '{result.Count()}' entries for language'{lang}' on environment '{environment.Value}'");
+            var resultDictionary = result.ToDictionary(t => t.Key, t => t.GetByLanguage(lang));
 
             var jsonResult = JsonHelper.Unflatten(resultDictionary);
 
             return new JsonResult(jsonResult);
         }
 
-        bool CommenKey(string key)
-        {
-            var envs = Startup.Configuration.GetSection("Dictionary")["Environments"].Split(',');
-
-            return !envs.Any(x => key.StartsWith(x + ".", System.StringComparison.CurrentCultureIgnoreCase));
-        }
-
         [HttpPost("~/api/[controller]/[action]")]
         public async Task updateFromJson([FromBody] List<Translation> translations)
         {
-            var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
-            var taskList = new List<Task>();
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
             foreach (var item in translations)
             {
-                var exist = baseRepository.AnySync(x => x.Key == item.Key && x.Branch == item.Branch);
+                _log.Debug($"updateFromJson : Key {item.Key} allready exist, updating");
+                new AddOrReplaceOne(mongoRepository, _log).Execute(item);
+                /* var exist = mongoRepository.Any(x => x.Key == item.Key && x.Branch == item.Branch);
                 if (exist)
                 {
-                    _log.Debug($"updateFromJson: Key {item.Key} allready exist, updating");
-                    taskList.Add(UpdateTranslation(baseRepository, item));
+                    _log.Debug($"updateFromJson : Key {item.Key} allready exist, updating");
+                    new UpdateTranslation(mongoRepository, _log).Execute(item);
                     continue;
                 }
 
-                _log.Debug($"updateFromJson: adding {item.ToString()}");
-                taskList.Add(AddTranslation(baseRepository, item));
-            }
-
-            foreach (var task in taskList)
-            {
-                await task;
+                _log.Debug($"updateFromJson : adding {item.ToString()}");
+                new AddTranslation(mongoRepository, _log).Execute(item); */
             }
 
             StatusCode(StatusCodes.Status201Created);
@@ -188,42 +180,61 @@ namespace translate_spa.Controllers
                     Nb = x.NB,
             });
 
-            var baseRepository = new BaseRepository<Translation>(new BaseDbBuilder());
-            //var taskList = translated.Select(x => UpdateTranslation(baseRepository, x));
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
 
             var taskList = new List<Task>();
             foreach (var item in translated)
             {
-                var existing = baseRepository.SingleOrDefaultSync(x => x.Key == item.Key && x.Branch == item.Branch);
-                if (existing != null)
-                {
-                    item.Id = existing.Id;
-                    _log.Debug($"updateFromOldJson: Key {item.Key} allready exist, updating");
-                    taskList.Add(baseRepository.ReplaceOne(existing, item));
-                    continue;
-                }
-                _log.Debug($"updateFromOldJson: adding {item.ToString()}");
-                taskList.Add(AddTranslation(baseRepository, item));
+                InsetTranslation(mongoRepository, item, _Branch.Value);
             }
-
-            foreach (var task in taskList)
-            {
-                await task;
-            }
-
             StatusCode(StatusCodes.Status201Created);
         }
 
-        async Task<Task> AddTranslation(BaseRepository<Translation> baseRepo, Translation translation)
+        private void InsetTranslation(MongoRepository<Translation> mongoRepository, Translation item, string branch)
         {
-            _log.Debug($"AddTranslation: adding {translation.ToString()}");
-            return baseRepo.Add(translation);
+            new AddOrReplaceOne(mongoRepository, _log).Execute(item);
+            return;
+            /* new SetEnvironmentFromKey(item).Execute();
+            item.SetNewId();
+            var predicate = PredicateBuilder.True<Translation>();
+            predicate = predicate.And(x => x.Environment == item.Environment);
+            if (!string.IsNullOrWhiteSpace(branch))
+            {
+                predicate = predicate.And(x => x.Branch == branch);
+            }
+            predicate = predicate.And(x => x.Key == item.Key);
+
+            var existing = mongoRepository.Single(x => x.Key == item.Key && x.Branch == branch);
+
+            if (existing != null)
+            {
+                item.Id = existing.Id;
+                _log.Debug($"updateFromOldJson : Key {item.Key} allready exist, updating");
+                mongoRepository.Update(item);
+            }
+            if (existing.Equals(item))
+            {
+                _log.Debug($"the two objects are identical, continuing.");
+                return;
+            }
+            _log.Debug($"updateFromOldJson : adding {item.ToString()}");
+            mongoRepository.Add(item); */
         }
 
-        async Task<Task> UpdateTranslation(BaseRepository<Translation> baseRepo, Translation translation)
+        [HttpGet("~/api/[controller]/[action]")]
+        public async Task ConvertAllItems()
         {
-            _log.Debug($"UpdateTranslation: updating {translation.ToString()}");
-            return baseRepo.Update(x => x.Key == translation.Key && x.Branch == translation.Branch, translation);
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
+            var predicate = PredicateBuilder.True<Translation>();
+            predicate = predicate.And(x => x.Environment == null);
+            predicate = predicate.And(x => x.Branch == null);
+
+            var result = mongoRepository.Query(predicate);
+            foreach (var item in result)
+            {
+                new SetEnvironmentFromKey(item).Execute();
+                mongoRepository.Update(item);
+            }
         }
     }
 }
