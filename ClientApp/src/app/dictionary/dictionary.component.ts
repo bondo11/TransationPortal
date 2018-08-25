@@ -54,6 +54,10 @@ export class DictionaryComponent {
 
       console.log(this.query);
       console.log(this.branch);
+      if (this.query === 'googletranslate') {
+        this.getGoogleTranslateResult();
+        return;
+      }
       if (this.query) {
         this.getQueryResult(this.query);
         return;
@@ -61,6 +65,22 @@ export class DictionaryComponent {
 
       this.getAllTranslations(this.branch);
     });
+  }
+
+  getGoogleTranslateResult(): any {
+    this.loading = true;
+    this.http
+      .get<Translation[]>(`${this.baseUrl}api/translation/GoogleTranslate`)
+      .subscribe(
+        (result: Translation[]) => {
+          this.translations = result;
+          this.loading = false;
+        },
+        error => {
+          console.error(error);
+          this.loading = false;
+        }
+      );
   }
 
   public getQueryResult(query) {

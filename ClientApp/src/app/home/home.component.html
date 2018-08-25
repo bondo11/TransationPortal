@@ -5,7 +5,7 @@
     <div class="header float-left">
         <h2>Guide</h2>
         <p>
-            Skriv keys i PascalSCase, og seperer med punktum(.). Punktum seperering skal indikere hvor oversættelsen bliver brugt. E.g.
+            Skriv keys i PascalCase, og seperer med punktum(.). Punktum seperering skal indikere hvor oversættelsen bliver brugt. E.g.
             "Desktop.Cpr.AddSigner.Name" vil indikere at oversættelsen hører til i desktop appen, på cpr siden, under AddSigner
             sektionen, og selve oversættelsen hedder "Name".
         </p>
@@ -17,17 +17,17 @@ curl -k {{baseUrl}}api/translation
       </pre> Man kan specificere ved uddybende at uddybe sit miljø, fx:
         <pre>
 curl -k {{baseUrl}}api/translation/query/[env]
-curl -k {{baseUrl}}api/translation/query/portal
-curl -k {{baseUrl}}api/translation/query/desktop
-curl -k {{baseUrl}}api/translation/query/sign
-curl -k {{baseUrl}}api/translation/query/web
+curl -k {{baseUrl}}api/translation/query/Portal
+curl -k {{baseUrl}}api/translation/query/Desktop
+curl -k {{baseUrl}}api/translation/query/Sign
+curl -k {{baseUrl}}api/translation/query/Web
 			</pre> Når man henter oversættelser til Desktop-appen, skal det hentes individuelt til hvert sprog:
         <pre>
 curl -k {{baseUrl}}api/AngularQuery/[env]/[lang]
-curl -k {{baseUrl}}api/translation/AngularQuery/desktop/da
-curl -k {{baseUrl}}api/translation/AngularQuery/desktop/en
-curl -k {{baseUrl}}api/translation/AngularQuery/desktop/sv
-curl -k {{baseUrl}}api/translation/AngularQuery/desktop/nb
+curl -k {{baseUrl}}api/translation/AngularQuery/Desktop/Da
+curl -k {{baseUrl}}api/translation/AngularQuery/Desktop/En
+curl -k {{baseUrl}}api/translation/AngularQuery/Desktop/Sv
+curl -k {{baseUrl}}api/translation/AngularQuery/Desktop/Nb
 			</pre>
     </div>
 </div>

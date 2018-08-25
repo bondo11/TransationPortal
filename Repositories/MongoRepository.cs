@@ -109,7 +109,7 @@ namespace translate_spa.Repositories
         #endregion
         #region QueryBuilders
 
-        public IEnumerable<T> All(Expression<Func<T, bool>> where)
+        public IEnumerable<T> All()
         {
             var findFluent = BuildFindFluent(_ => true, null, null);
             return findFluent.ToList();

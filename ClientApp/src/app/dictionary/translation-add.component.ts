@@ -23,7 +23,7 @@ import { Translation } from '../models/transation';
         <textarea cols="30" rows="4" [(ngModel)]='translation.nb' placeholder="Norsk oversættelse"></textarea>
       </td>
       <td>
-      <button (click)="addTranslation()">add</button>
+      <button (click)="addTranslation()"><i class="fas fa-plus"></i> Add</button>
       </td>
     </tr>`
 })

@@ -70,6 +70,13 @@ export class NavMenuComponent {
           icon: 'fas fa-user-secret ',
           subItems: []
         }
+        /*   {
+          title: 'Google Translate',
+          baseUrl: '/dictionary',
+          options: { env: 'googletranslate', branch: null },
+          icon: 'fas fa-language',
+          subItems: []
+        } */
       ]
     }
   ];

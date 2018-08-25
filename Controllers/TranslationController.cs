@@ -51,6 +51,14 @@ namespace translate_spa.Controllers
             return new AddTranslation(mongoRepository, _log).Execute(translation)as Translation;
         }
 
+        [HttpPost("~/api/[controller]/[action]")]
+        [ProducesResponseType(200, Type = typeof(Translation))]
+        [ProducesResponseType(404)]
+        public async Task<Translation> GoogleTranslateMissing([FromBody] Translation translation)
+        {
+            return new GoogleTranslate(translation, _log).Execute();
+        }
+
         [HttpPatch]
         [ProducesResponseType(200, Type = typeof(Translation))]
         [ProducesResponseType(404)]
@@ -103,7 +111,7 @@ namespace translate_spa.Controllers
 
             queryExpression = queryExpression.And(x => x.Environment == env);
 
-            /* if (_Branch.HasBranch)
+            if (_Branch.HasBranch)
             {
                 _log.Debug($"Query: adding Branch predicate for branch: '{_Branch.Value}'");
 
@@ -113,7 +121,7 @@ namespace translate_spa.Controllers
             if (env != TranslationsEnvironment.Desktop && env != TranslationsEnvironment.OldDesktop)
             {
                 queryExpression = queryExpression.Or(x => x.Environment == TranslationsEnvironment.Common);
-            } */
+            }
 
             var queryResult = mongoRepository.Query(queryExpression).ToList();
 
@@ -178,6 +186,7 @@ namespace translate_spa.Controllers
                     En = x.EN,
                     Sv = x.SV,
                     Nb = x.NB,
+                    Branch = string.Empty
             });
 
             var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
@@ -192,9 +201,8 @@ namespace translate_spa.Controllers
 
         private void InsetTranslation(MongoRepository<Translation> mongoRepository, Translation item, string branch)
         {
-            new AddOrReplaceOne(mongoRepository, _log).Execute(item);
-            return;
-            /* new SetEnvironmentFromKey(item).Execute();
+            //new AddOrReplaceOne(mongoRepository, _log).Execute(item);
+            new SetEnvironmentFromKey(item).Execute();
             item.SetNewId();
             var predicate = PredicateBuilder.True<Translation>();
             predicate = predicate.And(x => x.Environment == item.Environment);
@@ -204,21 +212,22 @@ namespace translate_spa.Controllers
             }
             predicate = predicate.And(x => x.Key == item.Key);
 
-            var existing = mongoRepository.Single(x => x.Key == item.Key && x.Branch == branch);
+            var existing = mongoRepository.SingleOrDefault(x => x.Key == item.Key && x.Branch == branch);
 
             if (existing != null)
             {
+                if (existing.Equals(item))
+                {
+                    _log.Debug($"the two objects are identical, continuing.");
+                    return;
+                }
                 item.Id = existing.Id;
                 _log.Debug($"updateFromOldJson : Key {item.Key} allready exist, updating");
                 mongoRepository.Update(item);
-            }
-            if (existing.Equals(item))
-            {
-                _log.Debug($"the two objects are identical, continuing.");
                 return;
             }
             _log.Debug($"updateFromOldJson : adding {item.ToString()}");
-            mongoRepository.Add(item); */
+            mongoRepository.Add(item);
         }
 
         [HttpGet("~/api/[controller]/[action]")]
@@ -235,6 +244,25 @@ namespace translate_spa.Controllers
                 new SetEnvironmentFromKey(item).Execute();
                 mongoRepository.Update(item);
             }
+        }
+
+        [HttpGet("~/api/[controller]/[action]")]
+        public async Task<IEnumerable<Translation>> GoogleTranslate()
+        {
+            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
+            var result = mongoRepository.All()
+                .Where(x => string.IsNullOrEmpty(x.Branch) &&
+                    (string.IsNullOrEmpty(x.Sv) ||
+                        string.IsNullOrEmpty(x.En) ||
+                        string.IsNullOrEmpty(x.Nb)) &&
+                    x.Da.Split(' ', StringSplitOptions.RemoveEmptyEntries).Count() <= 3);
+
+            /* foreach (var item in result)
+            {
+                new GoogleTranslate(item, _log).Execute();
+            } */
+
+            return result.Select(x => new GoogleTranslate(x, _log).Execute());
         }
     }
 }

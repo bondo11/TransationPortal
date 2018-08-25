@@ -11,7 +11,7 @@ namespace translate_spa.MongoDB.Interfaces
 {
     public interface IMongoRepository<T> where T : ITranslation
     {
-        IEnumerable<T> All(Expression<Func<T, bool>> where);
+        IEnumerable<T> All();
 
         Task<IEnumerable<T>> AllAsync();
 

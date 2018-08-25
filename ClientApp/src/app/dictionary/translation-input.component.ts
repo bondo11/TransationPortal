@@ -23,8 +23,9 @@ import { Translation } from '../models/transation';
       <textarea cols="30" rows="4" [(ngModel)]='translation.nb' placeholder="Norsk oversættelse"></textarea>
     </td>
     <td>
-    <button (click)="updateTranslation()">update</button>
-    <button (click)="deleteTranslation()">delete</button>
+    <button (click)="updateTranslation()"><i class="far fa-save"></i> Update</button>
+    <button (click)="deleteTranslation()"><i class="fas fa-trash-alt"></i> Delete</button><br>
+    <button (click)="googleTranslate()"><i class="fas fa-language"></i> GoogleTranslate</button>
     </td>`
 })
 export class TranslationInputComponent {
@@ -53,6 +54,23 @@ export class TranslationInputComponent {
       .subscribe(
         result => {
           this.error = false;
+        },
+        error => {
+          this.error = true;
+          console.error(error);
+        }
+      );
+  }
+
+  googleTranslate() {
+    this.http
+      .post<Translation>(
+        this.baseUrl + 'api/translation/googletranslatemissing',
+        this.translation
+      )
+      .subscribe(
+        (result: Translation) => {
+          this.translation = result;
         },
         error => {
           this.error = true;
