@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+
+using Microsoft.Extensions.Configuration;
 
 using MimeKit;
 
@@ -24,28 +27,34 @@ namespace translate_spa.Tasks
 	{
 		readonly IEnumerable<Translation> _translations;
 		readonly ILogger _log;
+		readonly IEnumerable<TranslationsEnvironment> _environments;
+		readonly string _notificationUrl = Startup.Configuration.GetSection("NotificationSettings:EnvironmentLink").Get<string>();
+		readonly string _senderName = Startup.Configuration.GetSection("EmailConfig:SenderName").Get<string>();
+
 		public MissingTranslationsTask(IEnumerable<Translation> translations, ILogger log)
 		{
 			_translations = translations;
 			_log = log;
+			_environments = GetEnvironments();
 		}
 
 		public async Task ExecuteAsync()
 		{
 			var message = GetMessage();
-			new SlackClient(MessageString(message)).Send();
+			new SlackClient(MessageString()).Send();
 			new MailClient(MailMessage(message), _log).Send();
 		}
 
-		SlackMessage MessageString(string text)
+		SlackMessage MessageString()
 		{
 			var slackMessage = new SlackMessage()
 			{
-				Text = text,
+				UserName = _senderName,
+					Attachments = GetSlackAttachments().ToList(),
 			};
-
 			return slackMessage;
 		}
+
 		MimeMessage MailMessage(string text)
 		{
 			var mailMessage = new MimeMessage()
@@ -54,38 +63,29 @@ namespace translate_spa.Tasks
 			};
 
 			mailMessage.From.Add(new MailboxAddress("TranslationsPortal", "translate@bon.do"));
-			mailMessage.To.Add(new MailboxAddress("Morten Bondo", "mbh@esignatur.dk"));
-			mailMessage.To.Add(new MailboxAddress("Jacob Rosca", "jhr@esignatur.dk"));
+			var recipients = GetRecipients();
+
+			foreach (var recipient in recipients)
+			{
+				mailMessage.To.Add(recipient);
+			}
+
 			mailMessage.Subject = "Oversættelser mangler";
 			var body = new TextPart("plain")
 			{
 				Text = text,
 			};
 
-			var translationsContent = JsonConvert.SerializeObject(_translations.Select(x => new ResponseTranslation()
-			{
-				KEY = x.Key,
-					DA = x.Da,
-					EN = x.En,
-					SV = x.Sv,
-					NB = x.Nb,
-			}));
-			var byteArray = Encoding.UTF8.GetBytes(translationsContent);
-
-			// create an image attachment for the file located at path
-			var attachment = new MimePart("text", "json")
-			{
-				Content = new MimeContent(new MemoryStream(byteArray), ContentEncoding.Default),
-					ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
-					ContentTransferEncoding = ContentEncoding.Base64,
-					FileName = Path.GetFileName("missing_translations.json")
-			};
-
 			// now create the multipart/mixed container to hold the message text and the
 			// image attachment
 			var multipart = new Multipart("mixed");
 			multipart.Add(body);
-			multipart.Add(attachment);
+			var mailAttachments = GetMailAttachments();
+
+			foreach (var attachment in mailAttachments)
+			{
+				multipart.Add(attachment);
+			}
 
 			// now set the multipart/mixed as the message body
 			mailMessage.Body = multipart;
@@ -96,13 +96,133 @@ namespace translate_spa.Tasks
 		string GetMessage()
 		{
 			var sb = new StringBuilder();
-			sb.Append("Der mangler følgende oversættelser:");
-			sb.Append($"\n>Da: {_translations.Count(x => string.IsNullOrEmpty(x.Da))}");
-			sb.Append($"\n>En: {_translations.Count(x => string.IsNullOrEmpty(x.En))}");
-			sb.Append($"\n>Sv: {_translations.Count(x => string.IsNullOrEmpty(x.Sv))}");
-			sb.Append($"\n>Nb: {_translations.Count(x => string.IsNullOrEmpty(x.Nb))}");
+			foreach (var env in _environments)
+			{
+				var envTranslations = _translations.Where(x => x.Environment == env);
+				sb.Append("Der mangler følgende oversættelser:");
+
+				var languages = Enum.GetValues(typeof(Language))
+					.Cast<Language>();
+
+				foreach (var lang in languages)
+				{
+					sb.Append($"\n>{lang.ToString()}: {envTranslations.Count(x => string.IsNullOrEmpty(x.GetByLanguage(lang)))}");
+				}
+				sb.Append($"\n\n\n");
+			}
 
 			return sb.ToString();
+		}
+
+		IEnumerable<MimePart> GetMailAttachments()
+		{
+			var mailAttachments = new List<MimePart>();
+
+			mailAttachments.Add(GetMailAttachment(_translations, $"missing_translations_all.json"));
+
+			foreach (var env in _environments)
+			{
+				var envTranslations = _translations.Where(x => x.Environment == env);
+
+				mailAttachments.Add(GetMailAttachment(envTranslations, $"missing_translations_{env.ToString().ToLower()}.json"));
+			}
+
+			return mailAttachments;
+		}
+
+		MimePart GetMailAttachment(IEnumerable<Translation> translations, string filename)
+		{
+			var translationsContent = JsonConvert.SerializeObject(translations.Select(x => new ResponseTranslation()
+			{
+				KEY = x.Key,
+					DA = x.Da,
+					EN = x.En,
+					SV = x.Sv,
+					NB = x.Nb,
+			}));
+
+			var byteArray = Encoding.UTF8.GetBytes(translationsContent);
+
+			// create an image attachment for the file located at path
+			var attachment = new MimePart("text", "json")
+			{
+				Content = new MimeContent(new MemoryStream(byteArray), ContentEncoding.Default),
+					ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
+					ContentTransferEncoding = ContentEncoding.Base64,
+					FileName = Path.GetFileName(filename),
+			};
+			return attachment;
+		}
+
+		IEnumerable<MailboxAddress> GetRecipients()
+		{
+			var recipients = Startup.Configuration.GetSection("EmailConfig:Receivers").Get<List<Recipient>>();
+
+			return recipients.Select(x => new MailboxAddress(x.Name, x.Email));
+		}
+
+		IEnumerable<SlackAttachment> GetSlackAttachments()
+		{
+			var attachments = new List<SlackAttachment>();
+
+			foreach (var env in _environments)
+			{
+				var envTranslations = _translations.Where(x => x.Environment == env);
+				if (!envTranslations.Any())
+				{
+					continue;
+				}
+				var languages = Enum.GetValues(typeof(Language))
+					.Cast<Language>();
+				var attachment = new SlackAttachment()
+				{
+					Fallback = string.Format("Der mangler '{0}' oversættelser til {1}", envTranslations.Count(), env.ToString()),
+						Color = "",
+						Pretext = string.Format("Der mangler '{0}' oversættelser til {1}", envTranslations.Count(), env.ToString()),
+						AuthorName = env.ToString(),
+						AuthorIcon = "https://www.shareicon.net/download/2016/11/22/854967_logo_512x512.png",
+						Title = $"{env.ToString()} mangler {envTranslations.Count()} oversættelser",
+						TitleLink = string.Format(_notificationUrl, env.ToString().ToLower()),
+						Text = "Optælling på manglende oversættelser opdelt i sprog:",
+						Fields = languages.Select(lang => new Field()
+						{
+							Title = lang.ToString(),
+								Value = envTranslations.Count(x => string.IsNullOrEmpty(x.GetByLanguage(lang))).ToString(),
+								Short = false,
+						}).ToList(),
+						Footer = "Translations API",
+						FooterIcon = "https://www.shareicon.net/download/2016/11/22/854967_logo_512x512.png",
+						TimeString = GetEpochTime(),
+				};
+				attachments.Add(attachment);
+			}
+
+			return attachments;
+		}
+
+		string GetEpochTime()
+		{
+			var utcDate = DateTime.Now.ToUniversalTime();
+			long baseTicks = 621355968000000000;
+			long tickResolution = 10000000;
+			long epoch = (utcDate.Ticks - baseTicks) / tickResolution;
+			long epochTicks = (epoch * tickResolution) + baseTicks;
+			var date = new DateTime(epochTicks, DateTimeKind.Utc);
+			return epoch.ToString();
+		}
+		IEnumerable<TranslationsEnvironment> GetEnvironments()
+		{
+			var enabledEnvironments = new List<TranslationsEnvironment>();
+			var environments = Startup.Configuration.GetSection("NotificationSettings:Environments").Get<string>().Split(',').ToList();
+			foreach (var env in environments)
+			{
+				var couldParse = Enum.TryParse(env, true, out TranslationsEnvironment parsed);
+				if (couldParse)
+				{
+					enabledEnvironments.Add(parsed);
+				}
+			}
+			return enabledEnvironments;
 		}
 	}
 }

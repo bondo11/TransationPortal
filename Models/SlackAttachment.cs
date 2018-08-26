@@ -49,7 +49,7 @@ namespace translate_spa.Models
 		public string FooterIcon { get; set; }
 
 		[JsonProperty("ts")]
-		public int TimeString { get; set; }
+		public string TimeString { get; set; }
 	}
 
 	public class Field
