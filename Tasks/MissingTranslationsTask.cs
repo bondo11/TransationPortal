@@ -30,6 +30,8 @@ namespace translate_spa.Tasks
 		readonly IEnumerable<TranslationsEnvironment> _environments;
 		readonly string _notificationUrl = Startup.Configuration.GetSection("NotificationSettings:EnvironmentLink").Get<string>();
 		readonly string _senderName = Startup.Configuration.GetSection("EmailConfig:SenderName").Get<string>();
+		readonly bool _enableEmail = Startup.Configuration.GetSection("NotificationSettings:EnableEmail").Get<bool>();
+		readonly bool _enableSlack = Startup.Configuration.GetSection("NotificationSettings:EnableSlack").Get<bool>();
 
 		public MissingTranslationsTask(IEnumerable<Translation> translations, ILogger log)
 		{
@@ -41,8 +43,15 @@ namespace translate_spa.Tasks
 		public async Task ExecuteAsync()
 		{
 			var message = GetMessage();
-			new SlackClient(MessageString()).Send();
-			new MailClient(MailMessage(message), _log).Send();
+
+			if (_enableSlack)
+			{
+				new SlackClient(MessageString()).Send();
+			}
+			if (_enableEmail)
+			{
+				new MailClient(MailMessage(message), _log).Send();
+			}
 		}
 
 		SlackMessage MessageString()
@@ -99,7 +108,7 @@ namespace translate_spa.Tasks
 			foreach (var env in _environments)
 			{
 				var envTranslations = _translations.Where(x => x.Environment == env);
-				sb.Append("Der mangler følgende oversættelser:");
+				sb.Append($"I {env.ToString()} mangler der følgende antal oversættelser:");
 
 				var languages = Enum.GetValues(typeof(Language))
 					.Cast<Language>();
@@ -108,6 +117,7 @@ namespace translate_spa.Tasks
 				{
 					sb.Append($"\n>{lang.ToString()}: {envTranslations.Count(x => string.IsNullOrEmpty(x.GetByLanguage(lang)))}");
 				}
+
 				sb.Append($"\n\n\n");
 			}
 
