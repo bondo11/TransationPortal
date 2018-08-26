@@ -233,4 +233,4 @@ _Pvt_Extensions
 .fake/
 
 appsettings.json
-appsettings.Development.json
+appsettings.*.json
