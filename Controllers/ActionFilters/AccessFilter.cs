@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 
 using Microsoft.AspNetCore.Http;
@@ -15,8 +16,8 @@ namespace translate_spa.Controllers.ActionFilters
     {
         public readonly ILogger _log;
         public string _ipAddress { get; private set; }
-
-        private string[] Get_allowedAddresses()
+        private static string[] _allowedAddresses = Get_allowedAddresses();
+        private static string[] Get_allowedAddresses()
         {
             return Startup.Configuration.GetSection("Access:Allow").Get<string[]>();
         }
@@ -29,8 +30,12 @@ namespace translate_spa.Controllers.ActionFilters
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             _ipAddress = new GetClientIp().Execute(context.HttpContext.Request);
-            _log.Debug($"{GetSenderName(context)}::{FormatIp(_ipAddress)}");
-
+            _log.Debug($"{GetSenderName(context)}::{_ipAddress}");
+            if (!IsIpAuthorized(_ipAddress))
+            {
+                _log.Error($"Accessing from unallowed network: '{_ipAddress}'");
+                throw new UnauthorizedAccessException("Unauthorized. You are not allowed to access the resource you are trying to access.");
+            }
             base.OnActionExecuting(context);
         }
 
@@ -66,6 +71,25 @@ namespace translate_spa.Controllers.ActionFilters
             var addressArray = ip.Split(':').ToList();
             var ipSegments = addressArray;
             return string.Join(".", ipSegments);
+        }
+
+        private bool IsIpAuthorized(string ipAddress)
+        {
+            var ip = ipAddress.Split(':').FirstOrDefault();
+            _log.Debug($"'{ip}' accessing");
+            if (string.IsNullOrWhiteSpace(ip))
+            {
+                return true;
+            }
+            foreach (var address in _allowedAddresses)
+            {
+                if (address.Equals(ip))
+                {
+                    return true;
+                }
+                _log.Debug($"'{ip}' is not a match with '{address}'");
+            }
+            return false;
         }
 
         private string GetSenderName(FilterContext context)
