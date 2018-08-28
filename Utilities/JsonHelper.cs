@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 public static class JsonHelper
 {
 
-	private enum ObjectType
+	private enum JSONType
 	{
 		OBJECT,
 		ARRAY
@@ -16,7 +16,7 @@ public static class JsonHelper
 
 	public static JObject Unflatten(IDictionary<string, string> keyValues)
 	{
-		JContainer result = null;
+		var result = (JContainer)null;
 		var setting = new JsonMergeSettings();
 		setting.MergeArrayHandling = MergeArrayHandling.Merge;
 		foreach (var pathValue in keyValues)
@@ -40,41 +40,20 @@ public static class JsonHelper
 		var pathSegments = SplitPath(path);
 
 		var lastItem = (JContainer)null;
-		//build from leaf to root
 		foreach (var pathSegment in pathSegments.Reverse())
 		{
 			var type = GetJsonType(pathSegment);
-			switch (type)
+			var obj = new JObject();
+			if (null == lastItem)
 			{
-				case ObjectType.OBJECT:
-					var obj = new JObject();
-					if (null == lastItem)
-					{
-						obj.Add(pathSegment, value);
-					}
-					else
-					{
-						obj.Add(pathSegment, lastItem);
-					}
-					lastItem = obj;
-					break;
-				case ObjectType.ARRAY:
-					var array = new JArray();
-					var index = GetArrayIndex(pathSegment);
-					array = FillEmpty(array, index);
-					if (lastItem == null)
-					{
-						array[index] = value;
-					}
-					else
-					{
-						array[index] = lastItem;
-					}
-					lastItem = array;
-					break;
-				default:
-					throw new ArgumentOutOfRangeException();
+				obj.Add(pathSegment.ToString(), value);
 			}
+			else
+			{
+				obj.Add(pathSegment.ToString(), lastItem);
+			}
+
+			lastItem = obj;
 		}
 		return lastItem;
 	}
@@ -91,21 +70,23 @@ public static class JsonHelper
 		{
 			array.Add(null);
 		}
+
 		return array;
 	}
 
-	private static ObjectType GetJsonType(string pathSegment)
+	private static JSONType GetJsonType(string pathSegment)
 	{
-		return int.TryParse(pathSegment, out int x) ? ObjectType.ARRAY : ObjectType.OBJECT;
+		var x = 0;
+		return int.TryParse(pathSegment, out x) ? JSONType.ARRAY : JSONType.OBJECT;
 	}
 
 	private static int GetArrayIndex(string pathSegment)
 	{
-		if (int.TryParse(pathSegment, out int result))
+		var result = 0;
+		if (int.TryParse(pathSegment, out result))
 		{
 			return result;
 		}
 		throw new Exception("Unable to parse array index: " + pathSegment);
 	}
-
 }

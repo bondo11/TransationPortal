@@ -19,6 +19,8 @@ namespace translate_spa.Actions
         private readonly Translation _translation;
         private readonly ILogger _log;
         private readonly TranslateService _translateService;
+        private readonly static string _googleApiKey = Startup.Configuration.GetSection("GoogleTranslateApi")["ApiKey"];
+        private readonly static string _googleApplicationName = Startup.Configuration.GetSection("GoogleTranslateApi")["ApplicationName"];
 
         public GoogleTranslate(Translation translation, ILogger log)
         {
@@ -26,8 +28,8 @@ namespace translate_spa.Actions
             _log = log;
             _translateService = new TranslateService(new BaseClientService.Initializer
             {
-                ApplicationName = "esignatur translations portal",
-                    ApiKey = "AIzaSyDAWis6FJJerxydhqV-iPSjChj3cY4E1FQ",
+                ApplicationName = _googleApplicationName,
+                    ApiKey = _googleApiKey,
             });
         }
 

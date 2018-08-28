@@ -9,7 +9,7 @@ namespace translate_spa.Clients
 {
     public class SlackClient
     {
-        public static readonly Uri DefaultWebHookUri = new Uri("https://hooks.slack.com/services/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");
+        public static readonly Uri DefaultWebHookUri = new Uri(Startup.Configuration.GetSection("Slack")["Uri"]);
 
         readonly SlackMessage _message;
         public SlackClient(SlackMessage message)
