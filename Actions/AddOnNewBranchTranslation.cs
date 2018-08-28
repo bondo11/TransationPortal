@@ -56,6 +56,7 @@ namespace translate_spa.Actions
             foreach (var item in translations)
             {
                 item.SetNewId();
+                item.Branch = branch;
             }
 
             SetEnvionment(translations);
