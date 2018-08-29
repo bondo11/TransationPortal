@@ -184,6 +184,12 @@ namespace translate_spa.Tasks
 				}
 				var languages = Enum.GetValues(typeof(Language))
 					.Cast<Language>();
+
+				/* if (!languages.Any(lang => envTranslations.Count(x => string.IsNullOrEmpty(x.GetByLanguage(lang))) > 0))
+				{
+					continue;
+				} */
+
 				var attachment = new SlackAttachment()
 				{
 					Fallback = string.Format("Der mangler '{0}' oversættelser til {1}", envTranslations.Count(), env.ToString()),
@@ -213,10 +219,10 @@ namespace translate_spa.Tasks
 		string GetEpochTime()
 		{
 			var utcDate = DateTime.Now.ToUniversalTime();
-			long baseTicks = 621355968000000000;
-			long tickResolution = 10000000;
-			long epoch = (utcDate.Ticks - baseTicks) / tickResolution;
-			long epochTicks = (epoch * tickResolution) + baseTicks;
+			var baseTicks = 621355968000000000;
+			var tickResolution = 10000000;
+			var epoch = (utcDate.Ticks - baseTicks) / tickResolution;
+			var epochTicks = (epoch * tickResolution) + baseTicks;
 			var date = new DateTime(epochTicks, DateTimeKind.Utc);
 			return epoch.ToString();
 		}
