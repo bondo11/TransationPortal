@@ -1,6 +1,9 @@
+import { environment } from './../../environments/environment.prod';
 import { Component, Inject, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Translation } from '../models/transation';
+import { ActivatedRoute } from '@angular/router';
+import TranslationsEnvironment from '../models/TranslationsEnvironment';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -42,15 +45,35 @@ export class TranslationAddComponent {
     Branch: ''
   };
 
+  env: TranslationsEnvironment;
+  branch: string;
+
   http: HttpClient;
   baseUrl: string;
+  route: ActivatedRoute;
 
   error: boolean;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(
+    http: HttpClient,
+    @Inject('BASE_URL') baseUrl: string,
+    route: ActivatedRoute
+  ) {
     this.http = http;
     this.baseUrl = baseUrl;
     this.error = false;
+    this.route = route;
+    this.route.queryParams.subscribe(params => {
+      const paramEnv: string = params['env'];
+      this.translation.environment = TranslationsEnvironment[paramEnv];
+      this.branch = params['branch'];
+    });
+  }
+
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnInit() {
+    this.translation.Branch = this.branch;
+    this.translation.environment = this.env;
   }
 
   addTranslation() {
@@ -76,6 +99,7 @@ export class TranslationAddComponent {
     this.translation.en = '';
     this.translation.sv = '';
     this.translation.nb = '';
-    this.translation.Branch = '';
+    this.translation.Branch = this.branch;
+    this.translation.environment = this.env;
   }
 }

@@ -48,6 +48,7 @@ namespace translate_spa.Controllers
 
             var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
 
+            new SetEnvironmentFromKey(translation).Execute();
             return new AddTranslation(mongoRepository, _log).Execute(translation)as Translation;
         }
 
@@ -80,6 +81,8 @@ namespace translate_spa.Controllers
             {
                 throw new Exception($"Adding dublicate translation-key not allowed. the used translationkey are allready in use");
             }
+
+            new SetEnvironmentFromKey(translation).Execute();
 
             new UpdateTranslation(mongoRepository, _log).Execute(translation);
 
