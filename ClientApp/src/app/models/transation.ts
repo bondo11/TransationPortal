@@ -1,3 +1,5 @@
+import TranslationsEnvironment from './TranslationsEnvironment';
+
 export interface Translation {
   id: string;
   key: string;
@@ -6,4 +8,5 @@ export interface Translation {
   en: string;
   sv: string;
   nb: string;
+  environment?: TranslationsEnvironment;
 }
