@@ -13,6 +13,7 @@ using translate_spa.MongoDB;
 using translate_spa.MongoDB.DbBuilder;
 using translate_spa.Querys;
 using translate_spa.Repositories;
+using translate_spa.Tasks;
 using translate_spa.Utilities;
 
 namespace translate_spa.Controllers
@@ -285,22 +286,16 @@ namespace translate_spa.Controllers
         }
 
         [HttpGet("~/api/[controller]/[action]")]
-        public async Task<IEnumerable<Translation>> GoogleTranslate()
+        public async Task Notify()
         {
-            var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
-            var result = mongoRepository.All()
-                .Where(x => string.IsNullOrEmpty(x.Branch) &&
-                    (string.IsNullOrEmpty(x.Sv) ||
-                        string.IsNullOrEmpty(x.En) ||
-                        string.IsNullOrEmpty(x.Nb)) &&
-                    x.Da.Split(' ', StringSplitOptions.RemoveEmptyEntries).Count() <= 3);
+			var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
 
-            /* foreach (var item in result)
-            {
-                new GoogleTranslate(item, _log).Execute();
-            } */
+			var translations = mongoRepository.All()
+				.Where(x => string.IsNullOrEmpty(x.Branch) &&
+					x.HasMissingTranslation()).ToList();
 
-            return result.Select(x => new GoogleTranslate(x, _log).Execute());
-        }
+			_log.Debug($"Running missing translations task. Missing translations: {translations.Count()}");
+			await new MissingTranslationsTask(translations, _log).ExecuteAsync();
+		}
     }
 }
