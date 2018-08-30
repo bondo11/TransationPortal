@@ -18,12 +18,17 @@ namespace translate_spa.Models
 
     [Serializable]
     public class OldTranslation
-    {
-        public string KEY { get; set; }
-        public string DA { get; set; }
-        public string EN { get; set; }
-        public string SV { get; set; }
-        public string NB { get; set; }
+	{
+		[JsonProperty("KEY")]
+		public string KEY { get; set; }
+		[JsonProperty("DA")]
+		public string DA { get; set; }
+		[JsonProperty("EN")]
+		public string EN { get; set; }
+		[JsonProperty("SV")]
+		public string SV { get; set; }
+		[JsonProperty("NB")]
+		public string NB { get; set; }
 
         public string GetByLanguage(Language lang)
         {

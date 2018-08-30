@@ -1,19 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
-using Newtonsoft.Json;
 
 using translate_spa.Actions;
 using translate_spa.Controllers.ActionFilters;
 using translate_spa.Models;
-using translate_spa.Models.Interfaces;
 using translate_spa.MongoDB;
 using translate_spa.MongoDB.DbBuilder;
 using translate_spa.Querys;
@@ -130,7 +125,43 @@ namespace translate_spa.Controllers
             return queryResult;
         }
 
-        [HttpGet("~/api/[controller]/[action]/{env}/{lang}")]
+		[HttpGet("~/api/[controller]/[action]/{env}")]
+		public async Task<IEnumerable<OldTranslation>> OldQuery(TranslationsEnvironment env)
+		{
+			var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
+			var queryExpression = PredicateBuilder.True<Translation>();
+
+			queryExpression = queryExpression.And(x => x.Environment == env);
+
+			if (_Branch.HasBranch)
+			{
+				_log.Debug($"Query: adding Branch predicate for branch: '{_Branch.Value}'");
+
+				queryExpression = queryExpression.And(x => x.Branch == null);
+			}
+
+			if (env != TranslationsEnvironment.Desktop && env != TranslationsEnvironment.OldDesktop)
+			{
+				queryExpression = queryExpression.Or(x => x.Environment == TranslationsEnvironment.Common);
+			}
+
+			var queryResult = await mongoRepository.QueryAsync(queryExpression);
+
+			_log.Debug($"Query: returning '{queryResult.Count()}' environment '{env.ToString()}''");
+
+			var result = queryResult.Select(x => new OldTranslation()
+			{
+				KEY = x.Key,
+				DA = x.Da,
+				EN = x.En,
+				SV = x.Sv,
+				NB = x.Nb,
+			});
+
+			return result;
+		}
+
+		[HttpGet("~/api/[controller]/[action]/{env}/{lang}")]
         public async Task<JsonResult> AngularQuery(Language lang, string env)
         {
             var environment = new GetEnvironment(env, _log, true);
@@ -146,7 +177,11 @@ namespace translate_spa.Controllers
 
             var result = mongoRepository.Query(predicate);
             _log.Debug($"AngularQuery: returning '{result.Count()}' entries for language'{lang}' on environment '{environment.Value}'");
-            var resultDictionary = result.ToDictionary(t => t.Key, t => t.GetByLanguage(lang));
+
+			// TODO: maybe this should be changed, at least for the desktop, we skip "Desktop.", but maybe we should skip "Desktop.App." on the 
+			// new desktop, and i dont know, what we should do on the web.
+			// HENCE, maybe create a function for this, and may enable skip on 'dot' via appsettings.
+            var resultDictionary = result.ToDictionary(t => string.Join(".", t.Key.Split(".").Skip(1)), t => t.GetByLanguage(lang));
 
             var jsonResult = JsonHelper.Unflatten(resultDictionary);
 
