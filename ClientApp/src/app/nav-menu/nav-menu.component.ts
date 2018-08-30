@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-nav-menu',
@@ -6,7 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-menu.component.scss']
 })
 export class NavMenuComponent {
+
   isExpanded = false;
+  http: HttpClient;
+  baseUrl: string;
+  public isSend: boolean = false;
+
+  constructor(
+    http: HttpClient,
+    @Inject('BASE_URL') baseUrl: string,
+  ) {
+    this.http = http;
+    this.baseUrl = baseUrl;
+  }
+
   public menuitems = [
     {
       title: 'Guide',
@@ -87,5 +101,21 @@ export class NavMenuComponent {
 
   toggle() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  sendNotification() {
+    this.http
+      .get(this.baseUrl + 'api/translation/notify')
+      .subscribe(
+        (result: any) => {
+          this.isSend = true;
+          setTimeout(() => {
+            this.isSend = false;
+          }, 3500);
+        },
+        error => {
+          console.error(error);
+        }
+      );
   }
 }
