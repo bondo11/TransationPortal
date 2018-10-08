@@ -206,6 +206,7 @@ namespace translate_spa.Tasks
 								Value = envTranslations.Count(x => string.IsNullOrEmpty(x.GetByLanguage(lang))).ToString(),
 								Short = false,
 						}).ToList(),
+
 						Footer = "Translations API",
 						FooterIcon = "https://www.shareicon.net/download/2016/11/22/854967_logo_512x512.png",
 						TimeString = GetEpochTime(),
