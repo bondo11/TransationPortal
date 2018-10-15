@@ -157,10 +157,10 @@ li.link-active a, li.link-active a:hover, li.link-active a:focus {
     -o-transform: translate(100px, -100px);
     -ms-transform: translate(100px, -100px);
     transform: translate(100px, -100px);
-    -webkit-transition: all 0.3s linear;
-    -moz-transition: all 0.3s linear;
-    -o-transition: all 0.3s linear;
-    transition: all 0.3s linear;
+    -webkit-transition: all 0.7s linear;
+    -moz-transition: all 0.7s linear;
+    -o-transition: all 0.7s linear;
+    transition: all 0.7s linear;
   }
 
   .animation2 {
@@ -175,7 +175,7 @@ li.link-active a, li.link-active a:hover, li.link-active a:focus {
     animation: fadeIn 0.4s ease-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    animation-delay: 0.4s;
+    animation-delay: 0.8s;
   }
 
   @-webkit-keyframes fadeIn {

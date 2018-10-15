@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { finalize } from 'rxjs/operators'
 
 @Component({
   selector: 'app-nav-menu',
@@ -12,6 +13,7 @@ export class NavMenuComponent {
   http: HttpClient;
   baseUrl: string;
   public isSend: boolean = false;
+  public isSending: boolean = false;
 
   constructor(
     http: HttpClient,
@@ -104,6 +106,8 @@ export class NavMenuComponent {
   }
 
   sendNotification() {
+    if (this.isSending) return;
+    this.isSending = true;
     this.http
       .get(this.baseUrl + 'api/translation/notify')
       .subscribe(
@@ -111,10 +115,12 @@ export class NavMenuComponent {
           this.isSend = true;
           setTimeout(() => {
             this.isSend = false;
+            this.isSending = false;
           }, 3500);
         },
         error => {
           console.error(error);
+          this.isSending = false;
         }
       );
   }

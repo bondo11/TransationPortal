@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Http;
@@ -13,6 +14,7 @@ using translate_spa.MongoDB;
 using translate_spa.MongoDB.DbBuilder;
 using translate_spa.Querys;
 using translate_spa.Repositories;
+using translate_spa.Scheduler;
 using translate_spa.Tasks;
 using translate_spa.Utilities;
 
@@ -288,14 +290,7 @@ namespace translate_spa.Controllers
         [HttpGet("~/api/[controller]/[action]")]
         public async Task Notify()
         {
-			var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
-
-			var translations = mongoRepository.All()
-				.Where(x => string.IsNullOrEmpty(x.Branch) &&
-					x.HasMissingTranslation()).ToList();
-
-			_log.Debug($"Running missing translations task. Missing translations: {translations.Count()}");
-			await new MissingTranslationsTask(translations, _log).ExecuteAsync();
+			new MissingTranslationsRunner().ExecuteAsync(new CancellationToken());
 		}
     }
 }

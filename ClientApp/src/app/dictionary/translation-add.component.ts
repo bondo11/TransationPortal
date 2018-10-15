@@ -79,7 +79,7 @@ export class TranslationAddComponent {
 
   addTranslation() {
     if (this.translation.key.indexOf(this.prefix) !== 0) {
-      this.translation.key = `${this.prefix}${this.translation.key}`
+      this.translation.key = `${this.getPrefix()}${this.translation.key}`
     }
 
     this.http

@@ -1,9 +1,6 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-
-using NLog;
 
 using translate_spa.Models;
 using translate_spa.MongoDB.DbBuilder;
