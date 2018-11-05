@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.Extensions.Configuration;
@@ -17,9 +16,6 @@ using NLog;
 using translate_spa.Clients;
 using translate_spa.Models;
 using translate_spa.Models.ResponseModels;
-using translate_spa.MongoDB.DbBuilder;
-using translate_spa.Repositories;
-using translate_spa.Tasks;
 
 namespace translate_spa.Tasks
 {
