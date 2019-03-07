@@ -6,24 +6,20 @@ using TranslationsResource = Google.Apis.Translate.v2.Data.TranslationsResource;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using NLog;
-
 using translate_spa.Models;
 using translate_spa.Utilities;
+using Serilog;
 
 namespace translate_spa.Actions
 {
     public class GoogleTranslate
     {
         private readonly Translation _translation;
-        private readonly ILogger _log;
         private readonly TranslateService _translateService;
 
-        public GoogleTranslate(Translation translation, ILogger log)
+        public GoogleTranslate(Translation translation)
         {
             _translation = translation;
-            _log = log;
             _translateService = new TranslateService(new BaseClientService.Initializer
             {
                 ApplicationName = "esignatur translations portal",
@@ -63,7 +59,7 @@ namespace translate_spa.Actions
 
             var translation = response.Translations.First();
 
-            _log.Debug($"translation from lang '{Language.Da.ToString()}'  to '{distLang.ToString()}'\n\tSource: {_translation.Da}\n\t\n\tResult: {translation.TranslatedText}");
+            Log.Debug($"translation from lang '{Language.Da.ToString()}'  to '{distLang.ToString()}'\n\tSource: {_translation.Da}\n\t\n\tResult: {translation.TranslatedText}");
 
             return translation.TranslatedText;
         }

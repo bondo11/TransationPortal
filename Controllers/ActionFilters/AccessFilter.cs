@@ -4,16 +4,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
-
-using NLog;
-
+using Serilog;
 using translate_spa.Utilities;
 
 namespace translate_spa.Controllers.ActionFilters
 {
     public class AccessFilter : ActionFilterAttribute
     {
-        public readonly ILogger _log;
         public string _ipAddress { get; private set; }
 
         private string[] Get_allowedAddresses()
@@ -23,32 +20,31 @@ namespace translate_spa.Controllers.ActionFilters
 
         public AccessFilter()
         {
-            _log = new NLog.LogFactory().GetCurrentClassLogger();
         }
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             _ipAddress = new GetClientIp().Execute(context.HttpContext.Request);
-            _log.Debug($"{GetSenderName(context)}::{FormatIp(_ipAddress)}");
+            Log.Debug($"{GetSenderName(context)}::{FormatIp(_ipAddress)}");
 
             base.OnActionExecuting(context);
         }
 
         public override void OnActionExecuted(ActionExecutedContext context)
         {
-            _log.Warn("ClassFilter OnActionExecuted");
+            Log.Warning("ClassFilter OnActionExecuted");
             base.OnActionExecuted(context);
         }
 
         public override void OnResultExecuting(ResultExecutingContext context)
         {
-            _log.Warn("ClassFilter OnResultExecuting");
+            Log.Warning("ClassFilter OnResultExecuting");
             base.OnResultExecuting(context);
         }
 
         public override void OnResultExecuted(ResultExecutedContext context)
         {
-            _log.Warn("ClassFilter OnResultExecuted");
+            Log.Warning("ClassFilter OnResultExecuted");
             base.OnResultExecuted(context);
         }
 

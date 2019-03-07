@@ -1,9 +1,7 @@
 using System;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-
-using NLog;
-
+using Serilog;
 using translate_spa.Models;
 using translate_spa.Models.Interfaces;
 using translate_spa.MongoDB;
@@ -14,13 +12,11 @@ namespace translate_spa.Actions
     public class AddTranslation
     {
         readonly MongoRepository<Translation> _mongoRepository;
-        readonly ILogger _log;
         private Expression<Func<Translation, bool>> _predicate;
 
-        public AddTranslation(MongoRepository<Translation> baseRepository, ILogger log)
+        public AddTranslation(MongoRepository<Translation> baseRepository)
         {
             _mongoRepository = baseRepository;
-            _log = log;
             _predicate = PredicateBuilder.True<Translation>();
         }
 
@@ -28,7 +24,7 @@ namespace translate_spa.Actions
         {
             SetPredicate(translation);
             InsureTranslationsCanBeInserted(translation);
-            _log.Debug($"Adding translation: {translation.ToString()}");
+            Log.Debug($"Adding translation: {translation.ToString()}");
             _mongoRepository.Add(translation);
             return translation;
         }
@@ -37,7 +33,7 @@ namespace translate_spa.Actions
         {
             SetPredicate(translation);
             InsureTranslationsCanBeInserted(translation);
-            _log.Debug($"Adding translation async: {translation.ToString()}");
+            Log.Debug($"Adding translation async: {translation.ToString()}");
             await _mongoRepository.AddAsync(translation);
 
             return translation;

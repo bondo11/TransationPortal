@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 using Newtonsoft.Json;
-
+using Serilog;
 using translate_spa.Actions;
 using translate_spa.Controllers.ActionFilters;
 using translate_spa.Models;
@@ -27,12 +27,12 @@ namespace translate_spa.Controllers
         [HttpGet]
         public async Task<IEnumerable<Translation>> Index()
         {
-            _log.Debug("Getting all translations");
+            Log.Debug("Getting all translations");
             var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
             var predicate = PredicateBuilder.True<Translation>();
-            predicate = new SetBranchPedicate(predicate, _log).Execute(_Branch);
+            predicate = new SetBranchPedicate(predicate).Execute(_Branch);
 
-            var result = new GetFromQuery(mongoRepository, _log).Execute(predicate);
+            var result = new GetFromQuery(mongoRepository).Execute(predicate);
             return result;
         }
 
@@ -48,7 +48,7 @@ namespace translate_spa.Controllers
 
             var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
 
-            return new AddTranslation(mongoRepository, _log).Execute(translation)as Translation;
+            return new AddTranslation(mongoRepository).Execute(translation)as Translation;
         }
 
         [HttpPost("~/api/[controller]/[action]")]
@@ -56,7 +56,7 @@ namespace translate_spa.Controllers
         [ProducesResponseType(404)]
         public async Task<Translation> GoogleTranslateMissing([FromBody] Translation translation)
         {
-            return new GoogleTranslate(translation, _log).Execute();
+            return new GoogleTranslate(translation).Execute();
         }
 
         [HttpPatch]
@@ -81,7 +81,7 @@ namespace translate_spa.Controllers
                 throw new Exception($"Adding dublicate translation-key not allowed. the used translationkey are allready in use");
             }
 
-            new UpdateTranslation(mongoRepository, _log).Execute(translation);
+            new UpdateTranslation(mongoRepository).Execute(translation);
 
             StatusCode(StatusCodes.Status202Accepted);
         }
@@ -96,7 +96,7 @@ namespace translate_spa.Controllers
 
             var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
 
-            _log.Debug($"Delete: Deleting '{id}'");
+            Log.Debug($"Delete: Deleting '{id}'");
 
             mongoRepository.Delete(id);
 
@@ -113,7 +113,7 @@ namespace translate_spa.Controllers
 
             if (_Branch.HasBranch)
             {
-                _log.Debug($"Query: adding Branch predicate for branch: '{_Branch.Value}'");
+                Log.Debug($"Query: adding Branch predicate for branch: '{_Branch.Value}'");
 
                 queryExpression = queryExpression.And(x => x.Branch == null);
             }
@@ -125,7 +125,7 @@ namespace translate_spa.Controllers
 
             var queryResult = mongoRepository.Query(queryExpression).ToList();
 
-            _log.Debug($"Query: returning '{queryResult.Count()}' environment '{env.ToString()}''");
+            Log.Debug($"Query: returning '{queryResult.Count()}' environment '{env.ToString()}''");
 
             return queryResult;
         }
@@ -133,7 +133,7 @@ namespace translate_spa.Controllers
         [HttpGet("~/api/[controller]/[action]/{env}/{lang}")]
         public async Task<JsonResult> AngularQuery(Language lang, string env)
         {
-            var environment = new GetEnvironment(env, _log, true);
+            var environment = new GetEnvironment(env, true);
             var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
             var predicate = PredicateBuilder.True<Translation>();
 
@@ -145,7 +145,7 @@ namespace translate_spa.Controllers
             predicate = predicate.And(x => x.Environment == environment.Value);
 
             var result = mongoRepository.Query(predicate);
-            _log.Debug($"AngularQuery: returning '{result.Count()}' entries for language'{lang}' on environment '{environment.Value}'");
+            Log.Debug($"AngularQuery: returning '{result.Count()}' entries for language'{lang}' on environment '{environment.Value}'");
             var resultDictionary = result.ToDictionary(t => t.Key, t => t.GetByLanguage(lang));
 
             var jsonResult = JsonHelper.Unflatten(resultDictionary);
@@ -159,18 +159,18 @@ namespace translate_spa.Controllers
             var mongoRepository = new MongoRepository<Translation>(new BaseDbBuilder());
             foreach (var item in translations)
             {
-                _log.Debug($"updateFromJson : Key {item.Key} allready exist, updating");
-                new AddOrReplaceOne(mongoRepository, _log).Execute(item);
+                Log.Debug($"updateFromJson : Key {item.Key} allready exist, updating");
+                new AddOrReplaceOne(mongoRepository).Execute(item);
                 /* var exist = mongoRepository.Any(x => x.Key == item.Key && x.Branch == item.Branch);
                 if (exist)
                 {
-                    _log.Debug($"updateFromJson : Key {item.Key} allready exist, updating");
-                    new UpdateTranslation(mongoRepository, _log).Execute(item);
+                    Log.Debug($"updateFromJson : Key {item.Key} allready exist, updating");
+                    new UpdateTranslation(mongoRepository, Log).Execute(item);
                     continue;
                 }
 
-                _log.Debug($"updateFromJson : adding {item.ToString()}");
-                new AddTranslation(mongoRepository, _log).Execute(item); */
+                Log.Debug($"updateFromJson : adding {item.ToString()}");
+                new AddTranslation(mongoRepository, Log).Execute(item); */
             }
 
             StatusCode(StatusCodes.Status201Created);
@@ -201,7 +201,7 @@ namespace translate_spa.Controllers
 
         private void InsetTranslation(MongoRepository<Translation> mongoRepository, Translation item, string branch)
         {
-            //new AddOrReplaceOne(mongoRepository, _log).Execute(item);
+            //new AddOrReplaceOne(mongoRepository, Log).Execute(item);
             new SetEnvironmentFromKey(item).Execute();
             item.SetNewId();
             var predicate = PredicateBuilder.True<Translation>();
@@ -218,15 +218,15 @@ namespace translate_spa.Controllers
             {
                 if (existing.Equals(item))
                 {
-                    _log.Debug($"the two objects are identical, continuing.");
+                    Log.Debug($"the two objects are identical, continuing.");
                     return;
                 }
                 item.Id = existing.Id;
-                _log.Debug($"updateFromOldJson : Key {item.Key} allready exist, updating");
+                Log.Debug($"updateFromOldJson : Key {item.Key} allready exist, updating");
                 mongoRepository.Update(item);
                 return;
             }
-            _log.Debug($"updateFromOldJson : adding {item.ToString()}");
+            Log.Debug($"updateFromOldJson : adding {item.ToString()}");
             mongoRepository.Add(item);
         }
 
@@ -259,10 +259,10 @@ namespace translate_spa.Controllers
 
             /* foreach (var item in result)
             {
-                new GoogleTranslate(item, _log).Execute();
+                new GoogleTranslate(item, Log).Execute();
             } */
 
-            return result.Select(x => new GoogleTranslate(x, _log).Execute());
+            return result.Select(x => new GoogleTranslate(x).Execute());
         }
     }
 }

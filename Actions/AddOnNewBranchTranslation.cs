@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-using NLog;
-
+using Serilog;
 using translate_spa.Models;
 using translate_spa.Models.Interfaces;
 using translate_spa.Repositories;
@@ -15,12 +13,10 @@ namespace translate_spa.Actions
     public class AddOnNewBranchTranslation
     {
         readonly MongoRepository<Translation> _mongoRepository;
-        readonly ILogger _log;
 
-        public AddOnNewBranchTranslation(MongoRepository<Translation> baseRepository, ILogger log)
+        public AddOnNewBranchTranslation(MongoRepository<Translation> baseRepository)
         {
             _mongoRepository = baseRepository;
-            _log = log;
         }
 
         public void Execute(List<Translation> translations, string branch)
@@ -51,7 +47,7 @@ namespace translate_spa.Actions
                 throw new ArgumentException($"Cant copy translations to empty branch");
             }
 
-            _log.Debug($"Copying '{translations.Count}' translations to branch: {branch}");
+            Log.Debug($"Copying '{translations.Count}' translations to branch: {branch}");
 
             foreach (var item in translations)
             {

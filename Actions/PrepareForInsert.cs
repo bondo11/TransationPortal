@@ -1,7 +1,4 @@
 using System.Threading.Tasks;
-
-using NLog;
-
 using translate_spa.Models;
 using translate_spa.Models.Interfaces;
 using translate_spa.Repositories;
@@ -12,13 +9,12 @@ namespace translate_spa.Actions
 	public class PrepareForInsert
 	{
 		readonly Translation _translation;
-		readonly ILogger _log;
 
-		public PrepareForInsert(Translation translation, ILogger log)
+		public PrepareForInsert(Translation translation)
 		{
 			_translation = translation;
-			_log = log;
 		}
+		
 		public void Execute()
 		{
 			if (string.IsNullOrWhiteSpace(_translation.Id))

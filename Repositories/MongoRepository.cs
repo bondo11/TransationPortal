@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 using MongoDB.Bson;
 using MongoDB.Driver;
-
-using NLog;
-
+using Serilog;
 using translate_spa.Models;
 using translate_spa.Models.Interfaces;
 using translate_spa.MongoDB.Interfaces;
@@ -44,7 +42,6 @@ namespace translate_spa.Repositories
         }
         #endregion
         #region Query functions
-        readonly ILogger _log = new NLog.LogFactory().GetCurrentClassLogger();
 
         public MongoRepository(IDbBuilder dbBuilder, IMongoDatabase mongoDatabase)
         {
@@ -69,7 +66,7 @@ namespace translate_spa.Repositories
             GetDatabase();
             GetCollection();
             if (MongoCollection == null)return;
-            _log.Debug("Creating mongo index");
+            Log.Debug("Creating mongo index");
             CreateIndex();
         }
 
@@ -83,7 +80,7 @@ namespace translate_spa.Repositories
         {
             var type = typeof(T);
             if (MongoCollection != null)return;
-            _log.Debug($"Getting mongocollection {typeof(T)}");
+            Log.Debug($"Getting mongocollection {typeof(T)}");
             MongoCollection = MongoDatabase.GetCollection<T>(type.Name);
         }
 
@@ -102,8 +99,8 @@ namespace translate_spa.Repositories
             }
             catch (Exception exception)
             {
-                _log.Error($"Error creating index {typeof(T)}");
-                _log.Error(exception.StackTrace);
+                Log.Error($"Error creating index {typeof(T)}");
+                Log.Error(exception.StackTrace);
             }
         }
         #endregion
@@ -234,7 +231,7 @@ namespace translate_spa.Repositories
 
             var def = Builders<T>.Filter.Where(where);
             var result = MongoCollection.UpdateOne(def, updateDefinition, options);
-            _log.Debug($"Updated item '{item.Key}' with result '{result.ToString()}'");
+            Log.Debug($"Updated item '{item.Key}' with result '{result.ToString()}'");
         }
 
         public async Task UpdateAsync(Expression<Func<T, bool>> where, T item)
@@ -256,7 +253,7 @@ namespace translate_spa.Repositories
             }
 
             var result = await MongoCollection.UpdateOneAsync(where, updateDefinition, options);
-            _log.Debug($"Updated item '{item.Key}' with result '{result.ToString()}'");
+            Log.Debug($"Updated item '{item.Key}' with result '{result.ToString()}'");
         }
 
         public int Count(Expression<Func<T, bool>> filter)
@@ -290,7 +287,7 @@ namespace translate_spa.Repositories
             }
             catch (System.Exception exception)
             {
-                _log.Error("Trying to make a single query, but multible instances found,");
+                Log.Error("Trying to make a single query, but multible instances found,");
                 throw exception;
             }
         }
@@ -304,7 +301,7 @@ namespace translate_spa.Repositories
             }
             catch (System.Exception exception)
             {
-                _log.Error("Trying to make a single query, but multible instances found,");
+                Log.Error("Trying to make a single query, but multible instances found,");
                 throw exception;
             }
         }
@@ -318,7 +315,7 @@ namespace translate_spa.Repositories
             }
             catch (System.Exception exception)
             {
-                _log.Error("None found, you have to have at least one document result on your query,");
+                Log.Error("None found, you have to have at least one document result on your query,");
                 throw exception;
             }
         }
@@ -332,7 +329,7 @@ namespace translate_spa.Repositories
             }
             catch (System.Exception exception)
             {
-                _log.Error("None found, you have to have at least one document result on your query,");
+                Log.Error("None found, you have to have at least one document result on your query,");
                 throw exception;
             }
         }
@@ -346,7 +343,7 @@ namespace translate_spa.Repositories
             }
             catch (System.Exception exception)
             {
-                _log.Error("Multible or none found, you have to have at exactly one document result on your query,");
+                Log.Error("Multible or none found, you have to have at exactly one document result on your query,");
                 throw exception;
             }
         }
@@ -360,7 +357,7 @@ namespace translate_spa.Repositories
             }
             catch (System.Exception exception)
             {
-                _log.Error("Multible or none found, you have to have at exactly one document result on your query,");
+                Log.Error("Multible or none found, you have to have at exactly one document result on your query,");
                 throw exception;
             }
         }

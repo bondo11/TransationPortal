@@ -1,9 +1,7 @@
 using System;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-
-using NLog;
-
+using Serilog;
 using translate_spa.Models;
 using translate_spa.Models.Interfaces;
 using translate_spa.MongoDB;
@@ -14,41 +12,39 @@ namespace translate_spa.Actions
     public class DeleteTranslation
     {
         readonly MongoRepository<Translation> _mongoRepository;
-        readonly ILogger _log;
         private Expression<Func<Translation, bool>> _predicate;
 
-        public DeleteTranslation(MongoRepository<Translation> baseRepository, ILogger log)
+        public DeleteTranslation(MongoRepository<Translation> baseRepository)
         {
             _mongoRepository = baseRepository;
-            _log = log;
             _predicate = PredicateBuilder.True<Translation>();
         }
 
         public void Execute(Translation translation)
         {
             SetPredicate(translation);
-            _log.Debug($"Deleting translation: {translation.ToString()}");
+            Log.Debug($"Deleting translation: {translation.ToString()}");
             _mongoRepository.Delete(_predicate);
         }
 
         public void Execute(string id)
         {
             SetPredicate(id);
-            _log.Debug($"Deleting translation by Id: {id}");
+            Log.Debug($"Deleting translation by Id: {id}");
             _mongoRepository.Delete(_predicate);
         }
 
         public async Task<Task> ExecuteAsync(Translation translation)
         {
             SetPredicate(translation);
-            _log.Debug($"Deleting translation async: {translation.ToString()}");
+            Log.Debug($"Deleting translation async: {translation.ToString()}");
             return _mongoRepository.DeleteAsync(_predicate);
         }
 
         public async Task<Task> ExecuteAsync(string id)
         {
             SetPredicate(id);
-            _log.Debug($"Deleting translation async by Id: {id}");
+            Log.Debug($"Deleting translation async by Id: {id}");
             return _mongoRepository.DeleteAsync(_predicate);
         }
 

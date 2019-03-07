@@ -1,9 +1,7 @@
 using System;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-
-using NLog;
-
+using Serilog;
 using translate_spa.Models;
 using translate_spa.Models.Interfaces;
 using translate_spa.MongoDB;
@@ -14,13 +12,11 @@ namespace translate_spa.Actions
     public class UpdateTranslation
     {
         readonly MongoRepository<Translation> _mongoRepository;
-        readonly ILogger _log;
         private Expression<Func<Translation, bool>> _predicate;
 
-        public UpdateTranslation(MongoRepository<Translation> baseRepository, ILogger log)
+        public UpdateTranslation(MongoRepository<Translation> baseRepository)
         {
             _mongoRepository = baseRepository;
-            _log = log;
             _predicate = PredicateBuilder.True<Translation>();
         }
 
@@ -29,7 +25,7 @@ namespace translate_spa.Actions
             SetPredicate(translation);
             var existing = _mongoRepository.Single(_predicate);
             ExistingGuard(existing);
-            _log.Debug($"UpdateTranslation: updating {translation.ToString()}");
+            Log.Debug($"UpdateTranslation: updating {translation.ToString()}");
             _mongoRepository.Update(translation);
         }
 
@@ -38,7 +34,7 @@ namespace translate_spa.Actions
             SetPredicate(translation);
             var existing = _mongoRepository.Single(_predicate);
             ExistingGuard(existing);
-            _log.Debug($"UpdateTranslation: updating {translation.ToString()}");
+            Log.Debug($"UpdateTranslation: updating {translation.ToString()}");
             return _mongoRepository.UpdateAsync(translation);
         }
 
@@ -48,7 +44,6 @@ namespace translate_spa.Actions
             {
                 throw new Exception("Cannot find the desired translation, you have to create it");
             }
-
         }
 
         private void SetPredicate(ITranslation translation)
