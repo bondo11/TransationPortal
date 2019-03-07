@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -23,7 +19,7 @@ namespace translate_spa
                 .Enrich.FromLogContext()
                 .WriteTo.File(path: "logs/translate.log",
                     rollingInterval: RollingInterval.Day,
-                    restrictedToMinimumLevel: LogEventLevel.Debug, 
+                    restrictedToMinimumLevel: LogEventLevel.Debug,
                     outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}"
                     )
                 .CreateLogger();

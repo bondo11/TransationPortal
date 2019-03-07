@@ -1,3 +1,5 @@
+using System;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using translate_spa.Controllers.ActionFilters;
+using translate_spa.Scheduler;
+using translate_spa.Scheduler.Scheduling;
 
 namespace translate_spa
 {
@@ -28,6 +32,12 @@ namespace translate_spa
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
+            });
+            services.AddSingleton<IScheduledTask, MissingTranslationsSchedule>();
+            services.AddScheduler((sender, args) =>
+            {
+                Console.Write(args.Exception.Message);
+                args.SetObserved();
             });
         }
 

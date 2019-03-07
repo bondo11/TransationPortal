@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -39,6 +40,12 @@ namespace translate_spa.Models
         [BsonElement("branch")]
         [BsonIgnoreIfNull]
         public string Branch { get; set; } = string.Empty;
+
+        public bool HasMissingTranslation()
+        {
+            var languages = Enum.GetValues(typeof(Language)).Cast<Language>();
+            return languages.Any(x => string.IsNullOrEmpty(this.GetByLanguage(x)));
+        }
 
         [BsonElement("environment")]
         [BsonIgnoreIfNull]
