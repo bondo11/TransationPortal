@@ -37,7 +37,7 @@ namespace translate_spa.Repositories
         {
             GetDatabase();
             GetCollection();
-            if (MongoCollection == null)return;
+            if (MongoCollection == null) return;
             Console.WriteLine("Creating mongo index");
             CreateIndex();
         }
@@ -51,7 +51,7 @@ namespace translate_spa.Repositories
         protected void GetCollection()
         {
             var type = typeof(T);
-            if (MongoCollection != null)return;
+            if (MongoCollection != null) return;
             Console.WriteLine($"Getting mongocollection {typeof(T)}");
             MongoCollection = MongoDatabase.GetCollection<T>(type.Name);
         }

@@ -10,7 +10,7 @@ using translate_spa.Utilities;
 
 namespace translate_spa.Controllers.ActionFilters
 {
-    public class AccessFilter : ActionFilterAttribute
+    public class IpAccessFilter : ActionFilterAttribute
     {
         public string _ipAddress { get; private set; }
         private static string[] _allowedAddresses = Get_allowedAddresses();
@@ -19,7 +19,7 @@ namespace translate_spa.Controllers.ActionFilters
             return Startup.Configuration.GetSection("Access:Allow").Get<string[]>();
         }
 
-        public AccessFilter()
+        public IpAccessFilter()
         {
         }
 
@@ -84,8 +84,8 @@ namespace translate_spa.Controllers.ActionFilters
                 {
                     return true;
                 }
-                Log.Debug($"'{ip}' is not a match with '{address}'");
             }
+            Log.Debug($"'{ip}' is not a match with any of '{string.Join(", ", _allowedAddresses)}'");
             return false;
         }
 

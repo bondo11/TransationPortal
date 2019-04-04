@@ -7,7 +7,7 @@ using translate_spa.Utilities;
 
 namespace translate_spa.Controllers.ActionFilters
 {
-    [AccessFilter]
+    [UserAccessFilter]
     public class BaseController : Controller, IExceptionFilter, IActionFilter
     {
         public string _ipAddress { get; private set; }

@@ -12,16 +12,16 @@ using translate_spa.Utilities;
 
 namespace translate_spa.Actions
 {
-    public class GoogleTranslate
+    public class GoogleBatchTranslate
     {
-        private readonly Translation _translation;
+        private readonly List<Translation> _translations;
         private readonly TranslateService _translateService;
         private readonly static string _googleApiKey = Startup.Configuration.GetSection ("GoogleTranslateApi") ["ApiKey"];
         private readonly static string _googleApplicationName = Startup.Configuration.GetSection ("GoogleTranslateApi") ["ApplicationName"];
 
-        public GoogleTranslate (Translation translation)
+        public GoogleBatchTranslate (List<Translation> translations)
         {
-            _translation = translation;
+            _translations = translations;
             _translateService = new TranslateService (new BaseClientService.Initializer
             {
                 ApplicationName = _googleApplicationName,
@@ -29,7 +29,7 @@ namespace translate_spa.Actions
             });
         }
 
-        public Translation Execute ()
+        public List<Translation> Execute ()
         {
             //var languages = Enum.GetValues(typeof(Language));
             var languages = Enum.GetValues (typeof (Language))
@@ -38,33 +38,35 @@ namespace translate_spa.Actions
 
             foreach (var lang in languages)
             {
-                var value = _translation.GetByLanguage (lang);
-                if (!string.IsNullOrEmpty (value))
+                var values = _translations.Select (x => x.GetByLanguage (lang));
+                var translatedValues = GetTranslations (values, lang);
+                int index = 0;
+                foreach (var translatedText in translatedValues)
                 {
-                    continue;
+                    _translations[index].SetValueByLanguage (lang, translatedText);
+                    index++;
                 }
-                _translation.SetValueByLanguage (lang, GetTranslation (lang));
             }
 
-            return _translation;
+            return _translations;
         }
 
-        string GetTranslation (Language distLang)
+        IEnumerable<string> GetTranslations (IEnumerable<string> values, Language distLang)
         {
             //var response = _translateService.Translations.List(_translation.Da, distLang).Execute();
             var response = _translateService.Translations.Translate (new TranslateTextRequest ()
             {
-                Format = _translation.Da.ContainsXHTML () ? "html" : "text",
+                Format = "html",
                     Source = Language.Da.ToString (),
                     Target = distLang.ToString (),
-                    Q = new [] { _translation.Da }
+                    Q = values.ToArray ()
             }).Execute ();
 
-            var translation = response.Translations.First ();
+            var translations = response.Translations;
 
-            Log.Debug ($"translation from lang '{Language.Da.ToString()}'  to '{distLang.ToString()}'\n\tSource: {_translation.Da}\n\t\n\tResult: {translation.TranslatedText}");
+            Log.Debug ($"translated '{values.Count()}' from '{Language.Da.ToString()}' to '{distLang.ToString()}'");
 
-            return translation.TranslatedText;
+            return translations.Select (x => x.TranslatedText);
         }
     }
 }
