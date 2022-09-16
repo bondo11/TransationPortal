@@ -26,7 +26,7 @@
     "@angular/router": "^7.2.12",
     "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
     "aspnet-prerendering": "^3.0.1",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "core-js": "2.6.5",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
